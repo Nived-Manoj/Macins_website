@@ -1,105 +1,108 @@
-import React from 'react';
-import { MapPin, Users, Award, Globe } from 'lucide-react';
+import { Globe, Users, Target, Award } from 'lucide-react';
 
-const About = () => {
-  const regions = [
-    { name: 'Dubai, UAE', description: 'Headquarters' },
-    { name: 'India', description: 'Regional Office' },
-    { name: 'Saudi Arabia', description: 'Operations' },
-    { name: 'Qatar', description: 'Strategic Projects' },
-  ];
-
+export default function About() {
   return (
-    <section id="about" className="py-20 bg-[#fbfbfb] dark:bg-[#151419] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#151419] dark:text-[#fbfbfb] mb-6">
-            About Macins Group
-          </h2>
-          <div className="w-24 h-1 bg-[#f56f10] mx-auto mb-6"></div>
-          <p className="text-xl text-[#878787] dark:text-[#878787] max-w-3xl mx-auto leading-relaxed">
-            A visionary conglomerate transforming industries through innovation, excellence, and sustainable practices across the Middle East and beyond.
-          </p>
-        </div>
+    <section id="about" className="py-20 bg-gradient-to-br from-teal-700 to-cyan-700 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-10"></div>
 
-        {/* Story Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div>
-            <h3 className="text-3xl font-bold text-[#151419] dark:text-[#fbfbfb] mb-6">
-              Our Story
-            </h3>
-            <p className="text-[#878787] dark:text-[#878787] mb-6 leading-relaxed">
-              Founded with a vision to reshape industries, Macins Group has emerged as a leading diversified conglomerate in the UAE. Our journey began with a commitment to excellence and has evolved into a comprehensive portfolio spanning construction, energy solutions, technology, and real estate.
-            </p>
-            <p className="text-[#878787] dark:text-[#878787] mb-8 leading-relaxed">
-              Today, we stand as trusted partners to over 500 clients, delivering innovative solutions that drive progress and sustainability across multiple sectors. Our expertise spans from MEP contracting and interior fit-outs to cutting-edge EV infrastructure and smart energy solutions.
-            </p>
-            
-            {/* Key Stats */}
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src="https://images.pexels.com/photos/7937666/pexels-photo-7937666.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Modern office interior"
+                className="w-full h-96 object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-8 shadow-2xl max-w-xs">
+              <div className="text-sm font-semibold tracking-widest uppercase text-teal-600 mb-2">
+                Modern Design
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                About Macins Group
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Building the future with innovation and excellence
+              </p>
+            </div>
+          </div>
+
+          <div className="text-white space-y-8">
+            <div>
+              <div className="text-sm font-semibold tracking-widest uppercase text-cyan-200 mb-3">
+                Our Story
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                Building Tomorrow's Infrastructure Today
+              </h2>
+              <p className="text-lg text-gray-200 mb-6">
+                Founded with a vision to transform the Middle East's construction and infrastructure landscape, Macins Group has grown into a diversified conglomerate delivering excellence across multiple sectors.
+              </p>
+              <p className="text-gray-200">
+                Under the leadership of Praveen Pillai, we've established a reputation for innovation, quality, and reliability. Our integrated approach combines traditional craftsmanship with cutting-edge technology to deliver projects that stand the test of time.
+              </p>
+            </div>
+
             <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-4 bg-white dark:bg-[#262626] rounded-lg shadow-sm">
-                <Award className="h-8 w-8 text-[#f56f10] mx-auto mb-2" />
-                <div className="text-2xl font-bold text-[#151419] dark:text-[#fbfbfb]">Excellence</div>
-                <div className="text-sm text-[#878787]">Driven</div>
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <Globe className="text-white" size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-1">Regional Presence</h4>
+                  <p className="text-sm text-gray-200">UAE, India, Saudi Arabia, Qatar</p>
+                </div>
               </div>
-              <div className="text-center p-4 bg-white dark:bg-[#262626] rounded-lg shadow-sm">
-                <Globe className="h-8 w-8 text-[#f56f10] mx-auto mb-2" />
-                <div className="text-2xl font-bold text-[#151419] dark:text-[#fbfbfb]">Global</div>
-                <div className="text-sm text-[#878787]">Reach</div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <Users className="text-white" size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-1">Expert Team</h4>
+                  <p className="text-sm text-gray-200">Skilled professionals across all sectors</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <Target className="text-white" size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-1">Our Mission</h4>
+                  <p className="text-sm text-gray-200">Excellence in every project</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <Award className="text-white" size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-1">Quality Assured</h4>
+                  <p className="text-sm text-gray-200">International standards certified</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Leadership Section */}
-          <div className="bg-gradient-to-br from-[#f56f10]/5 to-[#f56f10]/10 dark:from-[#f56f10]/10 dark:to-[#f56f10]/5 p-8 rounded-2xl">
-            <h3 className="text-3xl font-bold text-[#151419] dark:text-[#fbfbfb] mb-6">
-              Leadership
-            </h3>
-            <div className="flex items-center space-x-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#f56f10] to-[#f56f10]/80 rounded-full flex items-center justify-center">
-                <Users className="h-10 w-10 text-white" />
-              </div>
-              <div>
-                <h4 className="text-xl font-semibold text-[#151419] dark:text-[#fbfbfb] mb-2">
-                  Praveen Pillai
-                </h4>
-                <p className="text-[#878787] dark:text-[#878787] mb-3">
-                  Chief Executive Officer
-                </p>
-                <p className="text-sm text-[#878787] dark:text-[#878787] leading-relaxed">
-                  Visionary leader with extensive experience in driving organizational growth and innovation across multiple industry sectors.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Regional Presence */}
-        <div>
-          <h3 className="text-3xl font-bold text-[#151419] dark:text-[#fbfbfb] mb-12 text-center">
-            Our Regional Presence
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {regions.map((region, index) => (
-              <div 
-                key={region.name}
-                className="bg-white dark:bg-[#262626] p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+            <div className="flex gap-4">
+              <a
+                href="#contact"
+                className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-teal-700 rounded-lg hover:bg-gray-100 transition-all font-semibold"
               >
-                <MapPin className="h-8 w-8 text-[#f56f10] mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h4 className="text-lg font-semibold text-[#151419] dark:text-[#fbfbfb] mb-2">
-                  {region.name}
-                </h4>
-                <p className="text-[#878787] dark:text-[#878787] text-sm">
-                  {region.description}
-                </p>
-              </div>
-            ))}
+                <span>Get in Touch</span>
+              </a>
+              <a
+                href="#portfolio"
+                className="inline-flex items-center space-x-2 px-8 py-4 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30 transition-all font-semibold border border-white/30"
+              >
+                <span>View Projects</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

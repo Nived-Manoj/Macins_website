@@ -1,259 +1,209 @@
-import React, { useState } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  Send,
-  Building2,
-  Globe
-} from 'lucide-react';
+import { useState } from 'react';
+import { MapPin, Phone, Mail, Send } from 'lucide-react';
 
-const Contact = () => {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
+    phone: '',
     service: '',
-    message: ''
+    message: '',
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      alert('Thank you for your interest! We will contact you shortly.');
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+      setIsSubmitting(false);
+    }, 1500);
   };
 
   const offices = [
     {
-      city: 'Dubai',
-      country: 'United Arab Emirates',
-      address: 'Business Bay, Dubai, UAE',
-      phone: '+971 4 XXX XXXX',
+      city: 'Dubai, UAE',
+      address: 'Business Bay, Dubai',
+      phone: '+971 23 123 456',
       email: 'dubai@macinsgroup.com',
-      type: 'Headquarters'
     },
     {
-      city: 'Mumbai',
-      country: 'India',
-      address: 'Bandra Kurla Complex, Mumbai, India',
-      phone: '+91 22 XXXX XXXX',
+      city: 'Saudi Arabia',
+      address: 'Riyadh',
+      phone: '+966 11 234 5678',
+      email: 'saudi@macinsgroup.com',
+    },
+    {
+      city: 'India',
+      address: 'Mumbai',
+      phone: '+91 22 1234 5678',
       email: 'india@macinsgroup.com',
-      type: 'Regional Office'
     },
     {
-      city: 'Riyadh',
-      country: 'Saudi Arabia',
-      address: 'King Fahd Road, Riyadh, KSA',
-      phone: '+966 11 XXX XXXX',
-      email: 'ksa@macinsgroup.com',
-      type: 'Operations'
-    },
-    {
-      city: 'Doha',
-      country: 'Qatar',
-      address: 'West Bay, Doha, Qatar',
-      phone: '+974 4XXX XXXX',
+      city: 'Qatar',
+      address: 'Doha',
+      phone: '+974 4412 3456',
       email: 'qatar@macinsgroup.com',
-      type: 'Strategic Projects'
-    }
-  ];
-
-  const services = [
-    'MEP Contracting',
-    'Interior Fit-Out',
-    'Energy Solutions',
-    'EV Infrastructure',
-    'Fabrication',
-    'Real Estate',
-    'Civil Works',
-    'BMS & Retrofit'
+    },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-[#262626] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="contact" className="py-20 bg-white">
+      <div className="container mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#151419] dark:text-[#fbfbfb] mb-6">
-            Get In Touch
+          <div className="text-sm font-semibold tracking-widest uppercase text-teal-600 mb-3">
+            Get in Touch
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Let's Build Something Great Together
           </h2>
-          <div className="w-24 h-1 bg-[#f56f10] mx-auto mb-6"></div>
-          <p className="text-xl text-[#878787] dark:text-[#878787] max-w-3xl mx-auto leading-relaxed">
-            Ready to start your next project? Contact our experts for a consultation and discover how we can bring your vision to life.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Contact us today to discuss your project requirements. Our team is ready to help you bring your vision to life.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <div className="bg-[#fbfbfb] dark:bg-[#151419] p-8 rounded-2xl shadow-sm">
-            <h3 className="text-2xl font-bold text-[#151419] dark:text-[#fbfbfb] mb-6">
-              Send Us a Message
-            </h3>
-            
+        <div className="grid lg:grid-cols-2 gap-12">
+          <div>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[#151419] dark:text-[#fbfbfb] mb-2">
-                    Full Name *
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Full Name
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-[#878787]/20 bg-white dark:bg-[#262626] text-[#151419] dark:text-[#fbfbfb] focus:outline-none focus:ring-2 focus:ring-[#f56f10] focus:border-transparent transition-all duration-300"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
+                    placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[#151419] dark:text-[#fbfbfb] mb-2">
-                    Email Address *
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Email Address
                   </label>
                   <input
                     type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-[#878787]/20 bg-white dark:bg-[#262626] text-[#151419] dark:text-[#fbfbfb] focus:outline-none focus:ring-2 focus:ring-[#f56f10] focus:border-transparent transition-all duration-300"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
+                    placeholder="john@example.com"
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-[#151419] dark:text-[#fbfbfb] mb-2">
-                    Company
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Phone Number
                   </label>
                   <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-[#878787]/20 bg-white dark:bg-[#262626] text-[#151419] dark:text-[#fbfbfb] focus:outline-none focus:ring-2 focus:ring-[#f56f10] focus:border-transparent transition-all duration-300"
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
+                    placeholder="+971 XX XXX XXXX"
                   />
                 </div>
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-[#151419] dark:text-[#fbfbfb] mb-2">
-                    Service of Interest
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Service Required
                   </label>
                   <select
-                    id="service"
-                    name="service"
+                    required
                     value={formData.service}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-[#878787]/20 bg-white dark:bg-[#262626] text-[#151419] dark:text-[#fbfbfb] focus:outline-none focus:ring-2 focus:ring-[#f56f10] focus:border-transparent transition-all duration-300"
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
                   >
                     <option value="">Select a service</option>
-                    {services.map(service => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
+                    <option value="mep">MEP Contracting</option>
+                    <option value="interior">Interior Fit-Out</option>
+                    <option value="energy">Energy Solutions</option>
+                    <option value="ev">EV Infrastructure</option>
+                    <option value="fabrication">Fabrication</option>
+                    <option value="realestate">Real Estate</option>
+                    <option value="civil">Civil Works</option>
+                    <option value="bms">BMS & Retrofit</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-[#151419] dark:text-[#fbfbfb] mb-2">
-                  Message *
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Project Details
                 </label>
                 <textarea
-                  id="message"
-                  name="message"
+                  required
                   rows={6}
                   value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="Tell us about your project requirements..."
-                  className="w-full px-4 py-3 rounded-lg border border-[#878787]/20 bg-white dark:bg-[#262626] text-[#151419] dark:text-[#fbfbfb] focus:outline-none focus:ring-2 focus:ring-[#f56f10] focus:border-transparent transition-all duration-300 resize-none"
-                ></textarea>
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-100 outline-none transition-all resize-none"
+                  placeholder="Tell us about your project..."
+                />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#f56f10] hover:bg-[#f56f10]/90 text-white px-6 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center space-x-2"
+                disabled={isSubmitting}
+                className="w-full bg-teal-600 text-white px-8 py-4 rounded-lg hover:bg-teal-700 transition-all font-semibold flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Send className="h-5 w-5" />
-                <span>Send Message</span>
+                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                <Send size={20} />
               </button>
             </form>
           </div>
 
-          {/* Contact Information & Offices */}
           <div className="space-y-8">
-            {/* Quick Contact */}
-            <div className="bg-[#fbfbfb] dark:bg-[#151419] p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold text-[#151419] dark:text-[#fbfbfb] mb-6">
-                Quick Contact
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-[#f56f10]/10 rounded-lg flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-[#f56f10]" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-[#151419] dark:text-[#fbfbfb]">Phone</p>
-                    <p className="text-[#878787] dark:text-[#878787]">+971 4 XXX XXXX</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-[#f56f10]/10 rounded-lg flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-[#f56f10]" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-[#151419] dark:text-[#fbfbfb]">Email</p>
-                    <p className="text-[#878787] dark:text-[#878787]">info@macinsgroup.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-[#f56f10]/10 rounded-lg flex items-center justify-center">
-                    <Clock className="h-6 w-6 text-[#f56f10]" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-[#151419] dark:text-[#fbfbfb]">Business Hours</p>
-                    <p className="text-[#878787] dark:text-[#878787]">Mon - Fri: 8:00 AM - 6:00 PM</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Office Locations */}
-            <div className="bg-[#fbfbfb] dark:bg-[#151419] p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold text-[#151419] dark:text-[#fbfbfb] mb-6">
-                Our Offices
-              </h3>
+            <div className="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-6">Our Global Offices</h3>
               <div className="space-y-6">
                 {offices.map((office, index) => (
-                  <div key={office.city} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-[#f56f10]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-[#f56f10]" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2 mb-1">
-                        <h4 className="font-semibold text-[#151419] dark:text-[#fbfbfb]">
-                          {office.city}
-                        </h4>
-                        <span className="text-xs bg-[#f56f10]/20 text-[#f56f10] px-2 py-1 rounded-full">
-                          {office.type}
-                        </span>
+                  <div key={index} className="pb-6 border-b border-white/20 last:border-0">
+                    <h4 className="font-bold text-lg mb-3">{office.city}</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-start space-x-3">
+                        <MapPin size={18} className="flex-shrink-0 mt-0.5" />
+                        <span>{office.address}</span>
                       </div>
-                      <p className="text-sm text-[#878787] dark:text-[#878787] mb-1">
-                        {office.address}
-                      </p>
-                      <p className="text-sm text-[#878787] dark:text-[#878787]">
-                        {office.phone} • {office.email}
-                      </p>
+                      <div className="flex items-center space-x-3">
+                        <Phone size={18} className="flex-shrink-0" />
+                        <a href={`tel:${office.phone}`} className="hover:underline">
+                          {office.phone}
+                        </a>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Mail size={18} className="flex-shrink-0" />
+                        <a href={`mailto:${office.email}`} className="hover:underline">
+                          {office.email}
+                        </a>
+                      </div>
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-100 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Business Hours</h3>
+              <div className="space-y-2 text-gray-700">
+                <div className="flex justify-between">
+                  <span className="font-medium">Monday - Friday:</span>
+                  <span>8:00 AM - 6:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="font-medium">Saturday:</span>
+                  <span>9:00 AM - 3:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="font-medium">Sunday:</span>
+                  <span>Closed</span>
+                </div>
               </div>
             </div>
           </div>
@@ -261,6 +211,4 @@ const Contact = () => {
       </div>
     </section>
   );
-};
-
-export default Contact;
+}
