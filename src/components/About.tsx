@@ -1,4 +1,5 @@
 import { Globe, Users, Target, Award } from 'lucide-react';
+import heroBg1 from '../assets/pexels-houzlook-3356416.jpg';
 
 export default function About() {
   return (
@@ -10,7 +11,7 @@ export default function About() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/7937666/pexels-photo-7937666.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src= {heroBg1}
                 alt="Modern office interior"
                 className="w-full h-96 object-cover"
               />

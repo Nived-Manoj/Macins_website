@@ -1,4 +1,6 @@
 import { ArrowRight, Phone } from 'lucide-react';
+import heroBg from '../assets/modern-minimalist-office.jpg';
+
 
 export default function Hero() {
   return (
@@ -46,7 +48,7 @@ export default function Hero() {
               <div className="space-y-4">
                 <div className="rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
                   <img
-                    src="https://images.pexels.com/photos/7937666/pexels-photo-7937666.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    src= {heroBg}
                     alt="Modern interior"
                     className="w-full h-64 object-cover"
                   />
