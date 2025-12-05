@@ -140,7 +140,7 @@ const BathIcon = ({ className = 'w-5 h-5' }) => (
 );
 
 const AreaIcon = ({ className = 'w-5 h-5' }) => (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-5v4m0 0h-4m4-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 0h-4m4 4l-5-5" /></svg>
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-5v4m0 0h-4m4-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 0h-4m4 4l-5-5" /></svg>
 );
 
 
@@ -154,7 +154,7 @@ export default function Portfolio() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  
+
   // NOTE: Data structure is adapted to the complex real estate card design
   // but still includes the 'category' field for filtering.
   const projects = [
@@ -218,18 +218,7 @@ export default function Portfolio() {
       description: 'Mixed-use development with retail and office spaces.',
       featured: false
     },
-    {
-      id: 6,
-      location: 'Boutique Hotel',
-      category: 'Interior',
-      image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800',
-      price: '$8M',
-      beds: 0,
-      baths: 0,
-      sqft: '15,000 sq ft',
-      description: 'Luxury hotel interior design and execution with a spa.',
-      featured: false
-    },
+   
   ];
 
   const filters = ['All', 'Construction', 'Energy', 'Interior', 'Infrastructure'];
@@ -237,7 +226,7 @@ export default function Portfolio() {
   const filteredProjects = activeFilter === 'All'
     ? projects
     : projects.filter(project => project.category === activeFilter);
-    
+
   // Define colors based on the original design: 
   // Primary (dark green): #064e3b (Emerald-900 / Dark Teal)
   // Accent (lighter green for hover): #059669 (Emerald-600)
@@ -246,7 +235,7 @@ export default function Portfolio() {
 
   return (
     <section id="portfolio" className="py-20 bg-[#f5f5f4] relative overflow-hidden">
-      
+
       {/* Large Background Text with Slide-In Animation (Design maintained) */}
       <div className="absolute top-0 left-0 right-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
         <h2
@@ -263,9 +252,9 @@ export default function Portfolio() {
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        
+
         {/* Header Title & Filter Buttons (Portfolio component's structure) */}
-        <div 
+        <div
           className="text-center mb-16"
           style={{
             opacity: isVisible ? 1 : 0,
@@ -289,11 +278,10 @@ export default function Portfolio() {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-3 rounded-full font-bold transition-all ${
-                  activeFilter === filter
+                className={`px-6 py-3 rounded-full font-bold transition-all ${activeFilter === filter
                     ? 'bg-[#064e3b] text-white shadow-lg transform hover:scale-[1.05]'
                     : 'bg-white text-[#064e3b] border border-[#e7e5e4] hover:bg-[#e7e5e4]'
-                }`}
+                  }`}
               >
                 {filter}
               </button>
@@ -302,23 +290,21 @@ export default function Portfolio() {
         </div>
 
         {/* Projects Grid - Using the large/featured card design from Projects component */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              // Card Animation (Staggered fade-in/scale-up maintained)
+              className={`${project.featured ? 'md:col-span-2 lg:col-span-1 lg:row-span-2' : ''}`}
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(80px) scale(0.8)',
-                transition: `all 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.15 + 0.5}s`
+                transition: `all 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.15 + 0.3}s`
               }}
-              // Featured card spans two columns in a grid view, others one column.
-              className={`flex-shrink-0 ${project.featured ? 'lg:col-span-2' : 'lg:col-span-1'}`}
             >
-              <div className="bg-white rounded-[32px] overflow-hidden shadow-xl transition-all duration-500 h-full transform hover:scale-[1.01] hover:shadow-2xl">
-                
-                {/* Image Container with Hover Zoom */}
-                <div className="relative overflow-hidden" style={{ height: project.featured ? '400px' : '300px' }}>
+              {/* Card */}
+              <div className="bg-white rounded-3xl overflow-hidden shadow-xl transition-all duration-500 h-full transform hover:scale-[1.02] hover:shadow-2xl">
+                {/* Image Container */}
+                <div className={`relative overflow-hidden ${project.featured ? 'h-80 lg:h-96' : 'h-64'}`}>
                   <img
                     src={project.image}
                     alt={project.location}
@@ -326,55 +312,106 @@ export default function Portfolio() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                   
-                  {/* Category Tag (Adapted from Portfolio component, styled with Projects colors) */}
-                  <span className="absolute top-6 right-6 px-4 py-2 bg-[#064e3b] text-white font-bold rounded-full text-xs shadow-md">
-                    {project.category}
-                  </span>
+                  {/* Featured Tag */}
+                  {project.featured && (
+                    <span className="absolute top-6 left-6 px-4 py-2 bg-white text-emerald-900 font-bold rounded-full text-sm shadow-md">
+                      FEATURED LISTING
+                    </span>
+                  )}
                 </div>
 
-                {/* Content - Using the Featured Card Design for all items for consistency/detail */}
-                <div className="p-8">
-                    <h3 className="text-2xl font-extrabold text-[#064e3b] mb-4">
-                      {project.location}
-                    </h3>
-                    <p className="text-[#78716c] text-md mb-4">
-                      {project.description}
-                    </p>
-                    
-                    {/* Feature Grid: Beds/Baths/Area (Always rendered, though values may be 0/general) */}
-                    <div className="grid grid-cols-3 gap-4 text-[#78716c] mb-6">
-                        <div className="flex flex-col items-center p-3 border border-[#e7e5e4] rounded-xl">
-                            <BedIcon className="w-6 h-6 mb-1 text-[#064e3b]" />
-                            <span className="font-bold text-[#064e3b] text-sm">{project.beds}</span>
-                            <span className="text-xs">BEDS</span>
+                {/* Content */}
+                <div className="p-6">
+                  {!project.featured ? (
+                    /* Standard Card Layout */
+                    <div>
+                      <div className="flex justify-between items-start mb-3">
+                        <h3 className="text-xl font-extrabold text-emerald-900 leading-tight flex-1 pr-2">
+                          {project.location}
+                        </h3>
+                        <span className="text-xl font-bold text-emerald-900 whitespace-nowrap">
+                          {project.price}
+                        </span>
+                      </div>
+                      <p className="text-stone-600 text-sm mb-4 line-clamp-2">
+                        {project.description}
+                      </p>
+                      
+                      {/* Property Details */}
+                      {project.beds > 0 ? (
+                        <div className="flex flex-wrap gap-4 text-stone-600 text-sm font-semibold">
+                          <div className="flex items-center">
+                            <Bed className="w-4 h-4 mr-1 text-emerald-900" />
+                            <span>{project.beds} Beds</span>
+                          </div>
+                          <div className="flex items-center">
+                            <Bath className="w-4 h-4 mr-1 text-emerald-900" />
+                            <span>{project.baths} Baths</span>
+                          </div>
+                          <div className="flex items-center">
+                            <svg className="w-4 h-4 mr-1 text-emerald-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-5v4m0 0h-4m4-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 0h-4m4 4l-5-5" />
+                            </svg>
+                            <span>{project.sqft}</span>
+                          </div>
                         </div>
-                        <div className="flex flex-col items-center p-3 border border-[#e7e5e4] rounded-xl">
-                            <BathIcon className="w-6 h-6 mb-1 text-[#064e3b]" />
-                            <span className="font-bold text-[#064e3b] text-sm">{project.baths}</span>
-                            <span className="text-xs">BATHS</span>
+                      ) : (
+                        <div className="flex items-center text-stone-600 text-sm font-semibold">
+                          <svg className="w-4 h-4 mr-1 text-emerald-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                          <span>{project.sqft}</span>
                         </div>
-                        <div className="flex flex-col items-center p-3 border border-[#e7e5e4] rounded-xl">
-                            <AreaIcon className="w-6 h-6 mb-1 text-[#064e3b]" />
-                            <span className="font-bold text-[#064e3b] text-sm">{project.sqft}</span>
-                            <span className="text-xs">AREA</span>
-                        </div>
+                      )}
                     </div>
-
-                    <div className="flex justify-between items-center mb-6">
-                      <span className="text-3xl font-extrabold text-[#064e3b]">
-                        {project.price}
-                      </span>
+                  ) : (
+                    /* Featured Card Layout */
+                    <div>
+                      <h3 className="text-3xl font-extrabold text-emerald-900 mb-3">
+                        {project.location}
+                      </h3>
+                      <p className="text-stone-600 text-base mb-6">
+                        {project.description}
+                      </p>
+                      
+                      {/* Property Stats Grid */}
+                      <div className="grid grid-cols-3 gap-3 mb-6">
+                        <div className="flex flex-col items-center p-4 border border-stone-200 rounded-xl bg-stone-50">
+                          <Bed className="w-6 h-6 mb-2 text-emerald-900" />
+                          <span className="font-bold text-emerald-900 text-lg">{project.beds}</span>
+                          <span className="text-xs text-stone-600 font-semibold">BEDS</span>
+                        </div>
+                        <div className="flex flex-col items-center p-4 border border-stone-200 rounded-xl bg-stone-50">
+                          <Bath className="w-6 h-6 mb-2 text-emerald-900" />
+                          <span className="font-bold text-emerald-900 text-lg">{project.baths}</span>
+                          <span className="text-xs text-stone-600 font-semibold">BATHS</span>
+                        </div>
+                        <div className="flex flex-col items-center p-4 border border-stone-200 rounded-xl bg-stone-50">
+                          <svg className="w-6 h-6 mb-2 text-emerald-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-5v4m0 0h-4m4-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 0h-4m4 4l-5-5" />
+                          </svg>
+                          <span className="font-bold text-emerald-900 text-lg">{project.sqft}</span>
+                          <span className="text-xs text-stone-600 font-semibold">AREA</span>
+                        </div>
+                      </div>
+                      
+                      {/* Price and CTA */}
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="text-4xl font-extrabold text-emerald-900">
+                          {project.price}
+                        </span>
+                      </div>
+                      <button className="w-full bg-emerald-900 text-white py-4 rounded-full font-bold text-base hover:bg-emerald-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg">
+                        EXPLORE MORE
+                      </button>
                     </div>
-
-                    <button className="w-full bg-[#064e3b] text-white py-4 rounded-full font-bold text-lg hover:bg-[#059669] transition-all duration-300 transform hover:scale-[1.02] shadow-lg flex justify-center items-center">
-                      VIEW PROJECT
-                      <ExternalLink size={20} className="ml-2" />
-                    </button>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
+
 
         {/* Bottom Social Icons (Design maintained) */}
         <div
@@ -385,7 +422,7 @@ export default function Portfolio() {
             transition: 'all 1s ease-out 1.2s'
           }}
         >
-         
+
         </div>
       </div>
 

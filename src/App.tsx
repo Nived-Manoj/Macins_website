@@ -19,7 +19,7 @@ function App() {
       <About />
       <Services />
       <Portfolio />
-      <Projects/>
+      {/* <Projects/> */}
       <Sustainability />
       <Testimonials />
       <Contact />
