@@ -1,93 +1,248 @@
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [isVisible, setIsVisible] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 500);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-6 lg:px-12 py-16">
+    <footer className="bg-[#064e3b] text-white relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#059669]/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#10b981]/10 rounded-full blur-3xl"></div>
+
+      <div className="container mx-auto px-6 lg:px-12 py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          <div>
-            <div className="text-2xl font-bold mb-4">
-              <span className="italic text-teal-400">Macins</span> Group
+          {/* Company Info */}
+          <div
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+              transition: 'all 0.8s ease-out'
+            }}
+          >
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#059669] to-[#10b981] flex items-center justify-center">
+                <span className="text-white font-black text-xl">R</span>
+              </div>
+              <div className="text-2xl font-bold">
+                <span style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>REALWORLD</span>
+              </div>
             </div>
-            <p className="text-gray-400 mb-6">
+            <p className="text-[#d1fae5] mb-6 leading-relaxed">
               Building tomorrow's infrastructure today. Excellence across construction, energy, and technology sectors.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center hover:bg-teal-700 transition-all">
+            <div className="flex space-x-3">
+              <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center hover:bg-teal-700 transition-all">
+              <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center hover:bg-teal-700 transition-all">
+              <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center hover:bg-teal-700 transition-all">
+              <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Instagram size={20} />
               </a>
             </div>
           </div>
 
-          <div>
-            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
+          {/* Quick Links */}
+          <div
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+              transition: 'all 0.8s ease-out 0.2s'
+            }}
+          >
+            <h4 className="text-xl font-bold mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="#about" className="text-gray-400 hover:text-teal-400 transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-teal-400 transition-colors">Services</a></li>
-              <li><a href="#portfolio" className="text-gray-400 hover:text-teal-400 transition-colors">Portfolio</a></li>
-              <li><a href="#sustainability" className="text-gray-400 hover:text-teal-400 transition-colors">Sustainability</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-teal-400 transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-bold mb-4">Services</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">MEP Contracting</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">Interior Fit-Out</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">Energy Solutions</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">EV Infrastructure</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">Real Estate</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-bold mb-4">Contact Info</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <MapPin size={20} className="flex-shrink-0 mt-1 text-teal-400" />
-                <span className="text-gray-400">Business Bay, Dubai, UAE</span>
+              <li>
+                <a href="#about" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  About Us
+                </a>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone size={20} className="flex-shrink-0 text-teal-400" />
-                <a href="tel:+97123123456" className="text-gray-400 hover:text-teal-400 transition-colors">
+              <li>
+                <a href="#services" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#portfolio" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Portfolio
+                </a>
+              </li>
+              <li>
+                <a href="#sustainability" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Sustainability
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+              transition: 'all 0.8s ease-out 0.4s'
+            }}
+          >
+            <h4 className="text-xl font-bold mb-6 text-white">Services</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Property Buying
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Property Selling
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Property Renting
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Investment Consulting
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Property Management
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+              transition: 'all 0.8s ease-out 0.6s'
+            }}
+          >
+            <h4 className="text-xl font-bold mb-6 text-white">Contact Info</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start space-x-3 group">
+                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#10b981] transition-all duration-300">
+                  <MapPin size={20} className="text-[#10b981] group-hover:text-white transition-colors duration-300" />
+                </div>
+                <span className="text-[#d1fae5] leading-relaxed pt-2">Business Bay, Dubai, UAE</span>
+              </li>
+              <li className="flex items-center space-x-3 group">
+                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#10b981] transition-all duration-300">
+                  <Phone size={20} className="text-[#10b981] group-hover:text-white transition-colors duration-300" />
+                </div>
+                <a href="tel:+97123123456" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
                   +971 23 123 456
                 </a>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail size={20} className="flex-shrink-0 text-teal-400" />
-                <a href="mailto:info@macinsgroup.com" className="text-gray-400 hover:text-teal-400 transition-colors">
-                  info@macinsgroup.com
+              <li className="flex items-center space-x-3 group">
+                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#10b981] transition-all duration-300">
+                  <Mail size={20} className="text-[#10b981] group-hover:text-white transition-colors duration-300" />
+                </div>
+                <a href="mailto:info@realworld.com" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
+                  info@realworld.com
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
+        {/* Newsletter Section */}
+        <div 
+          className="mb-12 bg-gradient-to-r from-[#059669] to-[#10b981] rounded-2xl p-8 shadow-2xl"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'scale(1)' : 'scale(0.95)',
+            transition: 'all 1s ease-out 0.8s'
+          }}
+        >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h4 className="text-2xl font-bold text-white mb-2">Subscribe to Our Newsletter</h4>
+              <p className="text-[#d1fae5]">Get the latest updates on properties and market trends</p>
+            </div>
+            <div className="flex w-full md:w-auto gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="px-6 py-3 rounded-xl bg-white text-[#064e3b] placeholder-[#78716c] focus:outline-none focus:ring-2 focus:ring-white flex-1 md:w-80"
+              />
+              <button className="px-8 py-3 bg-[#064e3b] text-white rounded-xl font-bold hover:bg-white hover:text-[#064e3b] transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div 
+          className="border-t border-white/10 pt-8"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transition: 'all 1s ease-out 1s'
+          }}
+        >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Macins Group. All rights reserved.
+            <p className="text-[#d1fae5] text-sm">
+              © {currentYear} RealWorld. All rights reserved. Designed with ❤️
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">Sitemap</a>
+              <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">Privacy Policy</a>
+              <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">Terms of Service</a>
+              <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">Sitemap</a>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-[#059669] to-[#10b981] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 z-50 animate-bounce"
+        >
+          <ArrowUp size={24} />
+        </button>
+      )}
     </footer>
   );
 }
