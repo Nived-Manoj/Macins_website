@@ -370,12 +370,12 @@ export default function Sustainability() {
               }}
             >
               {/* Rating and Like button (as seen in the original full code) */}
-              <div className="absolute top-4 left-4 flex items-center bg-black/50 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              {/* <div className="absolute top-4 left-4 flex items-center bg-black/50 text-white px-3 py-1 rounded-full text-sm font-semibold">
                 {data.rating} <Star size={14} className="ml-1 fill-yellow-400 text-yellow-400" />
               </div>
               <div className="absolute top-4 right-4 p-2 bg-black/50 rounded-full text-white cursor-pointer hover:bg-black/80">
                 <Heart size={20} className="hover:fill-red-500" />
-              </div>
+              </div> */}
 
               {/* Text Overlay at Bottom */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
