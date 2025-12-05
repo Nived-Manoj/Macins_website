@@ -182,19 +182,43 @@ export default function Portfolio() {
       description: 'Solar power integration and smart grid for commercial complex.',
       featured: false
     },
+    // {
+    //   id: 3,
+    //   location: 'Executive Office Suite',
+    //   category: 'Interior',
+    //   image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
+    //   price: '$1.5M',
+    //   beds: 0,
+    //   baths: 0,
+    //   sqft: '5,200 sq ft',
+    //   description: 'Premium office interior fit-out with bespoke finishes.',
+    //   featured: true // Use the featured card style for visual variety
+    // },
     {
-      id: 3,
-      location: 'Executive Office Suite',
-      category: 'Interior',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
-      price: '$1.5M',
+      id: 4,
+      location: 'EV Charging Hub',
+      category: 'Infrastructure',
+      image: 'https://images.pexels.com/photos/7656740/pexels-photo-7656740.jpeg?auto=compress&cs=tinysrgb&w=800',
+      price: '$4.5M',
       beds: 0,
       baths: 0,
-      sqft: '5,200 sq ft',
-      description: 'Premium office interior fit-out with bespoke finishes.',
-      featured: true // Use the featured card style for visual variety
+      sqft: '10 Stations',
+      description: 'Multi-station EV charging facility with integrated canopy.',
+      featured: false
     },
-    {
+     {
+      id: 4,
+      location: 'EV Charging Hub',
+      category: 'Infrastructure',
+      image: 'https://images.pexels.com/photos/7656740/pexels-photo-7656740.jpeg?auto=compress&cs=tinysrgb&w=800',
+      price: '$4.5M',
+      beds: 0,
+      baths: 0,
+      sqft: '10 Stations',
+      description: 'Multi-station EV charging facility with integrated canopy.',
+      featured: false
+    },
+     {
       id: 4,
       location: 'EV Charging Hub',
       category: 'Infrastructure',
