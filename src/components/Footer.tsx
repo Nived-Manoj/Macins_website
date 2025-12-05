@@ -187,30 +187,14 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div 
-          className="mb-12 bg-gradient-to-r from-[#059669] to-[#10b981] rounded-2xl p-8 shadow-2xl"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'scale(1)' : 'scale(0.95)',
-            transition: 'all 1s ease-out 0.8s'
-          }}
-        >
+        
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h4 className="text-2xl font-bold text-white mb-2">Subscribe to Our Newsletter</h4>
-              <p className="text-[#d1fae5]">Get the latest updates on properties and market trends</p>
-            </div>
-            <div className="flex w-full md:w-auto gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="px-6 py-3 rounded-xl bg-white text-[#064e3b] placeholder-[#78716c] focus:outline-none focus:ring-2 focus:ring-white flex-1 md:w-80"
-              />
-              <button className="px-8 py-3 bg-[#064e3b] text-white rounded-xl font-bold hover:bg-white hover:text-[#064e3b] transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
-          </div>
+            
+           
+              
+              
+           
+          
         </div>
 
         {/* Bottom Bar */}
