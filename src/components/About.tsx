@@ -140,7 +140,7 @@ export default function About() {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           <div>
             <h3 className="text-5xl font-bold text-[#064e3b] mb-2">1500+</h3>
             <p className="text-[#78716c] text-lg">Project Finished</p>
@@ -157,11 +157,32 @@ export default function About() {
             <h3 className="text-5xl font-bold text-[#064e3b] mb-2">$50M+</h3>
             <p className="text-[#78716c] text-lg">Generating Income</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Second Image */}
-        <div className="flex justify-end mb-20">
-          <div className="rounded-3xl overflow-hidden shadow-xl max-w-2xl">
+        <div className="flex flex-col lg:flex-row justify-around items-center gap-8 mb-20">
+          {/* Left side - Stats in 2x2 grid */}
+          <div className="grid grid-cols-2 gap-x-20 gap-y-8 w-full lg:w-auto">
+            <div>
+              <h3 className="text-5xl font-bold text-[#064e3b] mb-2">1500+</h3>
+              <p className="text-[#78716c] text-lg">Project Finished</p>
+            </div>
+            <div>
+              <h3 className="text-5xl font-bold text-[#064e3b] mb-2">950+</h3>
+              <p className="text-[#78716c] text-lg">Global Customer</p>
+            </div>
+            <div>
+              <h3 className="text-5xl font-bold text-[#064e3b] mb-2">1500+</h3>
+              <p className="text-[#78716c] text-lg">Project Finished</p>
+            </div>
+            <div>
+              <h3 className="text-5xl font-bold text-[#064e3b] mb-2">950+</h3>
+              <p className="text-[#78716c] text-lg">Global Customer</p>
+            </div>
+          </div>
+
+          {/* Right side - Image */}
+          <div className="rounded-3xl overflow-hidden shadow-xl w-full lg:max-w-2xl">
             <img
               src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200"
               alt="Modern luxury home"
@@ -171,11 +192,11 @@ export default function About() {
         </div>
 
         {/* Top Picks Section */}
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <h2 className="text-5xl lg:text-6xl font-bold text-[#064e3b] mb-8" style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>
             TOP PICKS
           </h2>
-          
+
           <div className="flex gap-4 mb-8 overflow-x-auto pb-2">
             <button className="px-6 py-3 bg-[#064e3b] text-white rounded-full font-semibold whitespace-nowrap">
               Top Sellers
@@ -240,7 +261,7 @@ export default function About() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

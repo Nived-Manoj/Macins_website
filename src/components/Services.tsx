@@ -193,15 +193,15 @@ export default function App() {
     };
 
     // start autoscroll
-    scrollInterval = window.setInterval(() => {
-      // If we are at the end, scroll back to the start
-      if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
-        container.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        // Scroll right by a small amount
-        container.scrollBy({ left: 1, behavior: 'auto' });
-      }
-    }, 50); // Adjust interval for desired speed
+    // scrollInterval = window.setInterval(() => {
+    //   // If we are at the end, scroll back to the start
+    //   if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
+    //     container.scrollTo({ left: 0, behavior: 'smooth' });
+    //   } else {
+    //     // Scroll right by a small amount
+    //     container.scrollBy({ left: 1, behavior: 'auto' });
+    //   }
+    // }, 50); // Adjust interval for desired speed
 
     // Stop autoscroll when user interacts with the container
     container.addEventListener('mouseenter', handleInteraction);
@@ -216,9 +216,61 @@ export default function App() {
     };
   }, []); // Empty dependency array means this runs once on mount
 
+  const listings = [
+    {
+      title: "Miami, FL",
+      location: "South Beach",
+      specs: "3 beds, 2 baths, 1,900 sq ft",
+      price: "$895,000",
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
+    },
+    {
+      title: "Austin, TX",
+      location: "Hill Country",
+      specs: "4 beds, 3 baths, 2,400 sq ft", // Detailed specs
+      price: "$1,450,000",
+      image: "https://images.unsplash.com/photo-1600596542815-e32cb141d3d1?auto=format&fit=crop&q=80&w=1000",
+    },
+    {
+      title: "Chicago, IL",
+      location: "Lincoln Park",
+      specs: "5 beds, 4 baths, 3,200 sq ft",
+      price: "$1,750,000",
+      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000",
+    },
+    {
+      title: "Seattle, WA",
+      location: "Queen Anne",
+      specs: "3 beds, 2 baths, 2,100 sq ft",
+      price: "$1,200,000",
+      image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&q=80&w=1000",
+    },
+    {
+      title: "Austin, TX",
+      location: "Hill Country",
+      specs: "4 beds, 3 baths, 2,400 sq ft", // Detailed specs
+      price: "$1,450,000",
+      image: "https://images.unsplash.com/photo-1600596542815-e32cb141d3d1?auto=format&fit=crop&q=80&w=1000",
+    },
+    {
+      title: "Chicago, IL",
+      location: "Lincoln Park",
+      specs: "5 beds, 4 baths, 3,200 sq ft",
+      price: "$1,750,000",
+      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000",
+    },
+    {
+      title: "Seattle, WA",
+      location: "Queen Anne",
+      specs: "3 beds, 2 baths, 2,100 sq ft",
+      price: "$1,200,000",
+      image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&q=80&w=1000",
+    }
+  ];
+
   return (
-    <section id="services" className="relative py-16 sm:py-20 bg-gray-50 font-sans min-h-screen overflow-hidden">
-      
+    <section id="services" className="relative py-16 sm:py-20 bg-gray-50 font-sans overflow-hidden">
+
       {/* Large Background Text with Slide-In Animation */}
       <div className="absolute top-0 left-0 right-0 flex items-center justify-center opacity-[0.03] pointer-events-none z-0">
         <h2
@@ -249,87 +301,110 @@ export default function App() {
 
         {/* --- SCROLL WRAPPER (Relative for buttons) --- */}
         <div className="relative">
-          
+
           {/* Scroll Navigation Buttons */}
-          <button 
+          {/* <button 
             onClick={scrollLeft}
             aria-label="Scroll left"
             className="absolute left-0 top-1/2 -mt-10 hidden lg:flex items-center justify-center w-12 h-20 bg-white/70 backdrop-blur-sm rounded-r-xl shadow-xl z-20 
                        text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300"
           >
             <ChevronLeft size={30} />
-          </button>
-          
-          <button 
+          </button> */}
+
+          {/* <button 
             onClick={scrollRight}
             aria-label="Scroll right"
             className="absolute right-0 top-1/2 -mt-10 hidden lg:flex items-center justify-center w-12 h-20 bg-white/70 backdrop-blur-sm rounded-l-xl shadow-xl z-20 
                        text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300"
           >
             <ChevronRight size={30} />
-          </button>
+          </button> */}
 
           {/* --- HORIZONTAL SCROLL CONTAINER --- */}
-          <div 
-            ref={scrollContainerRef}
-            className="flex space-x-8 overflow-x-auto py-4 px-2 -mx-2 lg:px-0 lg:-mx-0 
-                       scrollbar-thin scrollbar-thumb-teal-300 scrollbar-track-gray-100"
-            style={{ scrollbarWidth: 'thin', scrollbarColor: '#4c929a #f3f4f6' }} 
-          >
-            {services.map((service, index) => (
-              <div
-                key={index}
-                // Awesome Card Styling Adaptation
-                className="group relative min-w-[20rem] w-[20rem] flex-shrink-0 font-sans p-7 cursor-pointer 
-                           bg-white rounded-[32px] overflow-hidden 
-                           shadow-2xl shadow-gray-300/50 
-                           transition-all duration-500 transform hover:scale-[1.03] hover:shadow-teal-500/30"
-              >
-                {/* Icon Circle */}
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${service.color} text-white mb-6 p-2 shadow-lg`}>
-                  <service.icon size={32} strokeWidth={2.5} />
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-2xl font-extrabold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors">
-                  {service.title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-gray-600 text-base leading-relaxed mb-6 h-16 line-clamp-3">
-                  {service.description}
-                </p>
-                
-                {/* Call to Action Link */}
-                <a 
-                  href="#" 
-                  className="text-base font-bold text-teal-600 group-hover:text-gray-900 flex items-center transition-colors duration-200"
+          <div className="w-full bg-gray-50 p-10">
+
+            {/* KEY FIX 1: 'items-start' 
+          This prevents the other cards from stretching vertically when one expands.
+      */}
+            <div
+              ref={scrollContainerRef}
+              className="flex items-start space-x-6 overflow-x-auto py-12 px-4 scrollbar-hide"
+            >
+              {listings.map((item, index) => (
+                <div
+                  key={index}
+                  className="group relative min-w-[280px] w-[280px] flex-shrink-0 cursor-pointer 
+               bg-white rounded-3xl overflow-hidden 
+               shadow-lg hover:shadow-2xl 
+               transition-all duration-500 ease-in-out
+               hover:w-[320px] hover:min-w-[320px] hover:-translate-y-2"
+                  style={{
+                    padding: "10px",
+                    backgroundColor: "white",
+                    border: "1px solid grey"
+                  }}
                 >
-                  Discover Solutions
-                  {/* Arrow Icon */}
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    height={18} 
-                    width={18}
-                    className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                  >
-                    <path 
-                      fill="currentColor" 
-                      d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z" 
+                  {/* Image Area */}
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      style={{
+                        backgroundColor: "white",
+                        borderRadius: "20px"
+                      }}
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                  </svg>
-                </a>
-                
-                {/* Decorative Element on hover */}
-                <div 
-                  className={`absolute inset-0 z-0 opacity-0 group-hover:opacity-10 
-                              rounded-[32px] transition-opacity duration-500 pointer-events-none 
-                              ${service.color} blur-3xl`}
-                />
-              </div>
-            ))}
+                  </div>
+
+                  {/* Content Area - Added padding-top (pt-4) for the Title */}
+                  <div className="pt-4 px-2">
+
+                    {/* Title - Always Visible */}
+                   
+                    <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between"
+
+                    }}>
+                       <h3 className="text-xl font-bold text-gray-900">
+                      {item.title}
+                    </h3>
+                        <div className="mb-1">
+                          <p className="text-xl font-bold text-gray-900">{item.price}</p>
+                        </div>
+                    </div>
+
+                    {/* Hidden Content 
+         1. Removed the outer 'p-6' wrapper div which caused the whitespace.
+         2. Increased max-h-20 to max-h-[300px] so the content fits when expanded.
+      */}
+                    <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+
+                      {/* Added a margin-top here so space only appears when expanded */}
+                      <div className="mt-4 flex flex-col">
+                        <p className="text-sm text-gray-500 mb-4 line-clamp-2">
+                          {item.specs} <br />
+                          <span className="text-xs text-gray-400 font-light">Contemporary style with spacious backyard</span>
+                        </p>
+
+                        <div className="mb-1">
+                          <p className="text-xl font-bold text-gray-900">{item.price}</p>
+                        </div>
+
+                        <button className="w-full mt-4 bg-gray-900 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300 text-sm">
+                          EXPLORE MORE
+                        </button>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           {/* --- END HORIZONTAL SCROLL CONTAINER --- */}
         </div>
