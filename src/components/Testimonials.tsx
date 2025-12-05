@@ -147,11 +147,14 @@
 
 
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, Quote, Home, Key, ArrowLeft, ArrowRight } from 'lucide-react';
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+ 
 
   useEffect(() => {
     setIsVisible(true);
@@ -199,6 +202,60 @@ export default function Testimonials() {
     'Emirates NBD',
     'Etihad Airways',
   ];
+
+
+  const cards = [
+        {
+            title: 'Property Presentation',
+            description: 'Let us handle the daily operations of your property. We guarantee efficient maintenance and increased profitability.',
+            image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 1: Modern house in a mountain setting
+            icon: Home,
+            color: 'bg-green-700/80',
+        },
+        {
+            title: 'Leasing Solutions',
+            description: 'Explore our personalized rental services to find the perfect property match. We offer access to high-quality homes in desirable areas.',
+            image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 2: Modern box-style house with pool
+            icon: Key,
+            color: 'bg-blue-700/80',
+        },
+         {
+            title: 'Property Presentation',
+            description: 'Let us handle the daily operations of your property. We guarantee efficient maintenance and increased profitability.',
+            image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 1: Modern house in a mountain setting
+            icon: Home,
+            color: 'bg-green-700/80',
+        },
+        {
+            title: 'Leasing Solutions',
+            description: 'Explore our personalized rental services to find the perfect property match. We offer access to high-quality homes in desirable areas.',
+            image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 2: Modern box-style house with pool
+            icon: Key,
+            color: 'bg-blue-700/80',
+        },
+         {
+            title: 'Property Presentation',
+            description: 'Let us handle the daily operations of your property. We guarantee efficient maintenance and increased profitability.',
+            image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 1: Modern house in a mountain setting
+            icon: Home,
+            color: 'bg-green-700/80',
+        },
+        {
+            title: 'Leasing Solutions',
+            description: 'Explore our personalized rental services to find the perfect property match. We offer access to high-quality homes in desirable areas.',
+            image: 'url(https://images.unsplash.com/photo-1580587771525-783a3d5e2e81?w=800&q=80&fit=crop&crop=entropy&auto=format)', // Image 2: Modern box-style house with pool
+            icon: Key,
+            color: 'bg-blue-700/80',
+        },
+    ];
+
+    const goToNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === cards.length - 1 ? 0 : prevIndex + 1));
+    };
+
+    const goToPrevious = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === 0 ? cards.length - 1 : prevIndex - 1));
+    };
 
   return (
     <section 
@@ -321,27 +378,52 @@ export default function Testimonials() {
           <p className="text-[#78716c] text-lg">500+ satisfied clients across the region</p>
         </div>
 
-        <div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transition: 'all 1s ease-out 1s'
-          }}
-        >
-          {clients.map((client, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center h-28 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:border-2 hover:border-[#10b981] border-2 border-transparent"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                transition: `all 0.6s ease-out ${1.1 + index * 0.1}s`
-              }}
-            >
-              <span className="text-lg font-bold text-[#064e3b]">{client}</span>
-            </div>
-          ))}
-        </div>
+       <div className="flex space-x-6 overflow-hidden relative">
+                    {cards.map((card, index) => (
+                        <div
+                            key={index}
+                            className={`flex-shrink-0 w-full md:w-[calc(50%-12px)] relative rounded-3xl overflow-hidden shadow-2xl transition-all duration-700 h-96`}
+                            style={{
+                                // Horizontal movement for carousel effect
+                                transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * 24}px))`, 
+                                opacity: isVisible ? 1 : 0.5, // Fading effect added
+                                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)', // Smooth transition
+                                
+                                // Background Image Style matching the UI
+                                backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1)), ${card.image}`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                            }}
+                        >
+                            {/* --- CONTENT OVERLAY --- */}
+                            <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                                <card.icon size={32} className="mb-3" />
+                                <h3 className="text-3xl font-bold mb-3">
+                                    {card.title}
+                                </h3>
+                                <p className="text-base opacity-80 max-w-sm leading-relaxed">
+                                    {card.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="flex space-x-3 mt-8">
+                    {/* Left Arrow */}
+                    <button
+                        onClick={goToPrevious}
+                        className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-gray-800 focus:outline-none"
+                    >
+                        <ArrowLeft size={24} />
+                    </button>
+                    {/* Right Arrow */}
+                    <button
+                        onClick={goToNext}
+                        className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-gray-800 focus:outline-none"
+                    >
+                        <ArrowRight size={24} />
+                    </button>
+                </div>
 
         {/* Bottom Stats */}
         <div 
