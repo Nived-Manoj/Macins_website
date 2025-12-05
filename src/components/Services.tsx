@@ -229,47 +229,50 @@ export default function App() {
       location: "Hill Country",
       specs: "4 beds, 3 baths, 2,400 sq ft", // Detailed specs
       price: "$1,450,000",
-      image: "https://images.unsplash.com/photo-1600596542815-e32cb141d3d1?auto=format&fit=crop&q=80&w=1000",
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
     },
     {
       title: "Chicago, IL",
       location: "Lincoln Park",
       specs: "5 beds, 4 baths, 3,200 sq ft",
       price: "$1,750,000",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000",
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
     },
     {
       title: "Seattle, WA",
       location: "Queen Anne",
       specs: "3 beds, 2 baths, 2,100 sq ft",
       price: "$1,200,000",
-      image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&q=80&w=1000",
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
     },
     {
       title: "Austin, TX",
       location: "Hill Country",
       specs: "4 beds, 3 baths, 2,400 sq ft", // Detailed specs
       price: "$1,450,000",
-      image: "https://images.unsplash.com/photo-1600596542815-e32cb141d3d1?auto=format&fit=crop&q=80&w=1000",
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
     },
     {
       title: "Chicago, IL",
       location: "Lincoln Park",
       specs: "5 beds, 4 baths, 3,200 sq ft",
       price: "$1,750,000",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000",
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
     },
     {
       title: "Seattle, WA",
       location: "Queen Anne",
       specs: "3 beds, 2 baths, 2,100 sq ft",
       price: "$1,200,000",
-      image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&q=80&w=1000",
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
     }
   ];
 
   return (
-    <section id="services" className="relative py-16 sm:py-20 bg-gray-50 font-sans overflow-hidden">
+    <section id="services" className="relative py-16 sm:py-20 bg-gray-50 font-sans overflow-hidden"
+      style={{
+        // backgroundColor: "red"
+      }}>
 
       {/* Large Background Text with Slide-In Animation */}
       <div className="absolute top-0 left-0 right-0 flex items-center justify-center opacity-[0.03] pointer-events-none z-0">
@@ -286,7 +289,10 @@ export default function App() {
         </h2>
       </div>
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container mx-auto relative z-10"
+        style={{
+          // backgroundColor: "yellow"
+        }}>
         <div className="text-center mb-12 sm:mb-16">
           <div className="text-sm font-semibold tracking-widest uppercase text-teal-600 mb-3">
             How We Can Help
@@ -322,30 +328,107 @@ export default function App() {
           </button> */}
 
           {/* --- HORIZONTAL SCROLL CONTAINER --- */}
-          <div className="w-full bg-gray-50 p-10">
+          <div className="bg-gray-50 "
+            style={{
+              // backgroundColor: "green",
+              width:"100%"
+            }}>
 
             {/* KEY FIX 1: 'items-start' 
           This prevents the other cards from stretching vertically when one expands.
       */}
             <div
               ref={scrollContainerRef}
-              className="flex items-start space-x-6 overflow-x-auto py-12 px-4 scrollbar-hide"
+              className="flex items-start overflow-x-auto py-12 scrollbar-hide"
             >
               {listings.map((item, index) => (
                 <div
                   key={index}
+                  className="group min-w-[300px] w-[300px] flex-shrink-0 cursor-pointer 
+    transition-all duration-500 ease-in-out
+    md:hover:z-10"
+                  style={{
+                    padding: "10px"
+                  }}
+                >
+                  <div
+                    className="relative bg-white rounded-3xl overflow-visible
+      shadow-lg hover:shadow-2xl 
+      transition-all duration-500 ease-in-out
+      md:group-hover:scale-[1.03]
+      md:group-hover:-translate-y-12"
+                    style={{
+                      backgroundColor: "white",
+                      border: "1px solid grey",
+                      padding: "10px"
+                    }}
+                  >
+                    {/* Image Area */}
+                    <div className="relative h-64 overflow-hidden rounded-[20px]">
+                      <img
+                        style={{
+                          borderRadius: "20px"
+                        }}
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                    {/* Content Area */}
+                    <div className="pt-4 px-2">
+                      {/* Title - Always Visible */}
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between"
+                        }}
+                      >
+                        <h3 className="text-xl font-bold text-gray-900">
+                          {item.title}
+                        </h3>
+                        {/* <div className="mb-1 md:group-hover:opacity-0 transition-opacity duration-300">
+                          <p className="text-xl font-bold text-gray-900">{item.price}</p>
+                        </div> */}
+                      </div>
+                      {/* Hidden Content - Expands on hover */}
+                      <div
+                        className="max-h-0 opacity-0 overflow-hidden 
+          md:group-hover:max-h-[300px] md:group-hover:opacity-100 
+          transition-all duration-500 ease-in-out"
+                      >
+                        <div className="mt-4 flex flex-col">
+                          <p className="text-sm text-gray-500 mb-4">
+                            {item.specs} <br />
+                            <span className="text-xs text-gray-400 font-light">
+                              Contemporary style with spacious backyard
+                            </span>
+                          </p>
+                        
+                          <button className="w-full mt-4 bg-gray-900 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300 text-sm">
+                            EXPLORE MORE
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {/* {listings.map((item, index) => (
+                <div
+                  key={index}
                   className="group relative min-w-[280px] w-[280px] flex-shrink-0 cursor-pointer 
-               bg-white rounded-3xl overflow-hidden 
-               shadow-lg hover:shadow-2xl 
-               transition-all duration-500 ease-in-out
-               hover:w-[320px] hover:min-w-[320px] hover:-translate-y-2"
+    bg-white rounded-3xl overflow-visible
+    shadow-lg hover:shadow-2xl 
+    transition-all duration-500 ease-in-out
+    md:group-hover:scale-[1.03]
+    md:group-hover:-translate-y-12
+    md:hover:z-10"
                   style={{
                     padding: "10px",
                     backgroundColor: "white",
                     border: "1px solid grey"
                   }}
                 >
-                  {/* Image Area */}
                   <div className="relative h-64 overflow-hidden">
                     <img
                       style={{
@@ -358,36 +441,32 @@ export default function App() {
                     />
                   </div>
 
-                  {/* Content Area - Added padding-top (pt-4) for the Title */}
                   <div className="pt-4 px-2">
-
-                    {/* Title - Always Visible */}
-                   
                     <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between"
-
-                    }}>
-                       <h3 className="text-xl font-bold text-gray-900">
-                      {item.title}
-                    </h3>
-                        <div className="mb-1">
-                          <p className="text-xl font-bold text-gray-900">{item.price}</p>
-                        </div>
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between"
+                      }}
+                    >
+                      <h3 className="text-xl font-bold text-gray-900">
+                        {item.title}
+                      </h3>
+                      <div className="mb-1 md:group-hover:opacity-0 transition-opacity duration-300">
+                        <p className="text-xl font-bold text-gray-900">{item.price}</p>
+                      </div>
                     </div>
 
-                    {/* Hidden Content 
-         1. Removed the outer 'p-6' wrapper div which caused the whitespace.
-         2. Increased max-h-20 to max-h-[300px] so the content fits when expanded.
-      */}
-                    <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out">
-
-                      {/* Added a margin-top here so space only appears when expanded */}
+                    <div
+                      className="max-h-0 opacity-0 overflow-hidden 
+        md:group-hover:max-h-[300px] md:group-hover:opacity-100 
+        transition-all duration-500 ease-in-out"
+                    >
                       <div className="mt-4 flex flex-col">
-                        <p className="text-sm text-gray-500 mb-4 line-clamp-2">
+                        <p className="text-sm text-gray-500 mb-4">
                           {item.specs} <br />
-                          <span className="text-xs text-gray-400 font-light">Contemporary style with spacious backyard</span>
+                          <span className="text-xs text-gray-400 font-light">
+                            Contemporary style with spacious backyard
+                          </span>
                         </p>
 
                         <div className="mb-1">
@@ -398,12 +477,10 @@ export default function App() {
                           EXPLORE MORE
                         </button>
                       </div>
-
                     </div>
-
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
           {/* --- END HORIZONTAL SCROLL CONTAINER --- */}
