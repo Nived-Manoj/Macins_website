@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Projects from './components/Projects';
+import DuplicateContact from './components/DuplicateContact';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       {/* <Projects/> */}
       <Sustainability />
       <Testimonials />
+      {/* <DuplicateContact /> */}
       <Contact />
       <Footer />
     </div>
