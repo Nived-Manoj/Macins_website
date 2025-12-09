@@ -128,14 +128,15 @@ export default function About() {
 
           <div className="space-y-6">
             <h2 className="text-5xl lg:text-6xl font-bold text-[#064e3b] mb-4" style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>
-              OUR STORY
+              WHO WE ARE
             </h2>
             <p className="text-[#57534e] text-base leading-relaxed italic">
-              At Real World, our goal is to transform the real estate experience. Our team of experts merges industry expertise with tailored service to meet your requirements accurately.
-            </p>
+              Founded in 2014 and headquartered in Dubai, Macins Group is a leading provider of integrated solutions across technology, construction, energy, and logistics. Operating across the UAE, India, Kingdom of Saudi Arabia, and Qatar, we bring global standards, regional expertise, and a relentless commitment to excellence for every engagement.            </p>
             <p className="text-[#57534e] text-base leading-relaxed">
-              Whether you are purchasing, selling, or renting, our team is devoted to fulfilling your needs. We present a varied range of properties in top-notch areas, simplifying the search for your ideal home or investment prospect. Allow us to assist you in creating a better future in real estate.
-            </p>
+              Macins Group was founded on the belief that infrastructure should inspire progress. From our beginnings as a contracting company, we have expanded into a diversified group that builds smarter, greener, and more responsible environments.          
+                </p>
+                <p className="text-[#57534e] text-base leading-relaxed">
+With expertise across construction, interior solutions, joinery, energy, and real estate, we deliver projects that enhance human experience, elevate standards, and stand the test of time. Our work is not just about building structures it’s about creating enduring value for communities and industries                </p>
           </div>
         </div>
 

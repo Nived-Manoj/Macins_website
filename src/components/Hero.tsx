@@ -265,12 +265,11 @@ export default function Hero() {
                 Design • Build • Inspire
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-emerald-950">
-                From Outdated To
-                <span className="block text-emerald-700">Outstanding</span>
+                Transforming Ordinary
+                <span className="block text-emerald-700">Into Extraordinary</span>
               </h1>
               <p className="text-lg lg:text-xl text-stone-700 max-w-xl">
-                Building tomorrow's infrastructure today. Macins Group delivers excellence across construction, energy, technology, and real estate sectors throughout the Middle East and beyond.
-              </p>
+Building tomorrow’s infrastructure today. Macins Group delivers excellence across construction, energy, technology, and real estate sectors throughout the Middle East and beyond.              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">

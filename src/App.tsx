@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Projects from './components/Projects';
 import DuplicateContact from './components/DuplicateContact';
+import FounderSection from './components/FounderSection';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Hero />
       {/* <Stats /> */}
       <About />
+      <FounderSection/>
       <Services />
       <Portfolio />
       {/* <Projects/> */}
