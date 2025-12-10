@@ -64,7 +64,7 @@ export default function Services() {
     };
   }, []); // Empty dependency array means this runs once on mount
 
- const listings = [
+  const listings = [
     {
       title: "Miami, FL",
       location: "South Beach",
@@ -179,159 +179,91 @@ export default function Services() {
           <div className="bg-gray-50 "
             style={{
               // backgroundColor: "green",
-              width:"100%"
+              width: "100%"
             }}>
 
             {/* KEY FIX 1: 'items-start' 
           This prevents the other cards from stretching vertically when one expands.
       */}
-            <div
-              ref={scrollContainerRef}
-              className="flex items-start overflow-x-auto py-12 scrollbar-hide"
-            >
-              {listings.map((item, index) => (
-                <div
-                  key={index}
-                  className="group min-w-[300px] w-[300px] flex-shrink-0 cursor-pointer 
-    transition-all duration-500 ease-in-out
-    md:hover:z-10"
-                  style={{
-                    padding: "10px"
-                  }}
-                >
-                  <div
-                    className="relative bg-white rounded-3xl overflow-visible
-      shadow-lg hover:shadow-2xl 
-      transition-all duration-500 ease-in-out
-      md:group-hover:scale-[1.03]
-      md:group-hover:-translate-y-12"
-                    style={{
-                      backgroundColor: "white",
-                      border: "1px solid grey",
-                      padding: "10px"
-                    }}
-                  >
-                    {/* Image Area */}
-                    <div className="relative h-64 overflow-hidden rounded-[20px]">
-                      <img
-                        style={{
-                          borderRadius: "20px"
-                        }}
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                    </div>
-                    {/* Content Area */}
-                    <div className="pt-4 px-2">
-                      {/* Title - Always Visible */}
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between"
-                        }}
-                      >
-                        <h3 className="text-xl font-bold text-gray-900">
-                          {item.title}
-                        </h3>
-                        {/* <div className="mb-1 md:group-hover:opacity-0 transition-opacity duration-300">
-                          <p className="text-xl font-bold text-gray-900">{item.price}</p>
-                        </div> */}
-                      </div>
-                      {/* Hidden Content - Expands on hover */}
-                      <div
-                        className="max-h-0 opacity-0 overflow-hidden 
-          md:group-hover:max-h-[300px] md:group-hover:opacity-100 
-          transition-all duration-500 ease-in-out"
-                      >
-                        <div className="mt-4 flex flex-col">
-                          <p className="text-sm text-gray-500 mb-4">
-                            {item.specs} <br />
-                            <span className="text-xs text-gray-400 font-light">
-                              Contemporary style with spacious backyard
-                            </span>
-                          </p>
-                        
-                          <button 
-                           onClick={() => navigate(`/property/${index}`)}
-                          className="w-full mt-4 bg-gray-900 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300 text-sm">
-                            EXPLORE MORE
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              {/* {listings.map((item, index) => (
-                <div
-                  key={index}
-                  className="group relative min-w-[280px] w-[280px] flex-shrink-0 cursor-pointer 
-    bg-white rounded-3xl overflow-visible
-    shadow-lg hover:shadow-2xl 
-    transition-all duration-500 ease-in-out
-    md:group-hover:scale-[1.03]
-    md:group-hover:-translate-y-12
-    md:hover:z-10"
-                  style={{
-                    padding: "10px",
-                    backgroundColor: "white",
-                    border: "1px solid grey"
-                  }}
-                >
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      style={{
-                        backgroundColor: "white",
-                        borderRadius: "20px"
-                      }}
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
+        <div
+  ref={scrollContainerRef}
+  className="flex items-start overflow-x-auto py-12 scrollbar-hide"
+>
+  {listings.map((item, index) => (
+    <div
+      key={index}
+      className="group min-w-[300px] w-[300px] flex-shrink-0 cursor-pointer 
+        transition-all duration-500 ease-in-out
+        hover:z-10"
+      style={{
+        padding: "10px"
+      }}
+    >
+      <div
+        className="relative bg-white rounded-3xl overflow-visible
+          shadow-lg hover:shadow-2xl 
+          transition-all duration-500 ease-in-out
+          group-hover:scale-[1.03]
+          group-hover:-translate-y-12"
+        style={{
+          backgroundColor: "white",
+          border: "1px solid grey",
+          padding: "10px"
+        }}
+      >
+        {/* Image Area */}
+        <div className="relative h-64 overflow-hidden rounded-[20px]">
+          <img
+            style={{
+              borderRadius: "20px"
+            }}
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        </div>
+        
+        {/* Content Area */}
+        <div className="pt-4 px-2">
+          {/* Title - Always Visible */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between"
+            }}
+          >
+            <h3 className="text-xl font-bold text-gray-900">
+              {item.title}
+            </h3>
+          </div>
+          
+          {/* Hidden Content - Expands on hover/tap */}
+          <div
+            className="max-h-0 opacity-0 overflow-hidden 
+              group-hover:max-h-[300px] group-hover:opacity-100 
+              transition-all duration-500 ease-in-out"
+          >
+            <div className="mt-4 flex flex-col">
+              <p className="text-sm text-gray-500 mb-4">
+                {item.specs} <br />
+                <span className="text-xs text-gray-400 font-light">
+                  Contemporary style with spacious backyard
+                </span>
+              </p>
 
-                  <div className="pt-4 px-2">
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between"
-                      }}
-                    >
-                      <h3 className="text-xl font-bold text-gray-900">
-                        {item.title}
-                      </h3>
-                      <div className="mb-1 md:group-hover:opacity-0 transition-opacity duration-300">
-                        <p className="text-xl font-bold text-gray-900">{item.price}</p>
-                      </div>
-                    </div>
-
-                    <div
-                      className="max-h-0 opacity-0 overflow-hidden 
-        md:group-hover:max-h-[300px] md:group-hover:opacity-100 
-        transition-all duration-500 ease-in-out"
-                    >
-                      <div className="mt-4 flex flex-col">
-                        <p className="text-sm text-gray-500 mb-4">
-                          {item.specs} <br />
-                          <span className="text-xs text-gray-400 font-light">
-                            Contemporary style with spacious backyard
-                          </span>
-                        </p>
-
-                        <div className="mb-1">
-                          <p className="text-xl font-bold text-gray-900">{item.price}</p>
-                        </div>
-
-                        <button className="w-full mt-4 bg-gray-900 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300 text-sm">
-                          EXPLORE MORE
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))} */}
+              <button
+                onClick={() => navigate(`/property/${index}`)}
+                className="w-full mt-4 bg-gray-900 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300 text-sm"
+              >
+                EXPLORE MORE
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
           </div>
           {/* --- END HORIZONTAL SCROLL CONTAINER --- */}
         </div>

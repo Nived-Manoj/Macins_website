@@ -137,19 +137,7 @@ export default function PropertyDetail() {
         </div>
 
         {/* Image Navigation Dots */}
-        <div className="absolute bottom-32 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-          {property.images.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveImage(idx)}
-              className={`transition-all duration-300 rounded-full ${
-                activeImage === idx 
-                  ? 'w-12 h-3 bg-white' 
-                  : 'w-3 h-3 bg-white/50 hover:bg-white/75'
-              }`}
-            />
-          ))}
-        </div>
+       
       </div>
 
       {/* Thumbnail Gallery */}
