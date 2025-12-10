@@ -308,7 +308,7 @@ export default function Sustainability() {
     title: 'REFINED SUSTAINABILITY STRATEGIES AND EXPERT ADVICE',
     cardTitle: 'Pioneering Green Building Certification',
     description: 'Discover why our clients rave about the outstanding service and unwavering commitment we provide throughout every new development. Learn how we\'ve transformed their living spaces and enriched their lives with eco-conscious technology.',
-    buttonText: 'Explore Further',
+    // buttonText: 'Explore Further',
     stat: 'Carbon Neutral by 2030',
     statLabel: 'Our Core Goal',
     icon: Award,
@@ -442,9 +442,9 @@ export default function Sustainability() {
               </div>
 
               {/* Button matching the image style */}
-              <button className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-white hover:text-black">
+              {/* <button className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-white hover:text-black">
                 {mainSectionData.buttonText}
-              </button>
+              </button> */}
             </div>
           </div>
 

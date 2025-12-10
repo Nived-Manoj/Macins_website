@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
@@ -11,24 +12,36 @@ import Footer from './components/Footer';
 import Projects from './components/Projects';
 import DuplicateContact from './components/DuplicateContact';
 import FounderSection from './components/FounderSection';
+import PropertyDetail from './components/PropertyDetail'; // Import the detail page
 
-function App() {
+// Create a HomePage component with all your sections
+function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <>
       <Hero />
-      {/* <Stats /> */}
       <About />
       <FounderSection/>
       <Services />
       <Portfolio />
-      {/* <Projects/> */}
       <Sustainability />
       <Testimonials />
-      {/* <DuplicateContact /> */}
       <Contact />
-      <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/property/:id" element={<PropertyDetail />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

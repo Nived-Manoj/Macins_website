@@ -8,11 +8,11 @@ export default function Footer() {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 500);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -42,7 +42,7 @@ export default function Footer() {
                 <span className="text-white font-black text-xl">R</span>
               </div>
               <div className="text-2xl font-bold">
-                <span style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>REALWORLD</span>
+                <span style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>MACINS GROUP</span>
               </div>
             </div>
             <p className="text-[#d1fae5] mb-6 leading-relaxed">
@@ -187,33 +187,40 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            
-           
-              
-              
-           
-          
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+
+
+
+
+
+
         </div>
 
         {/* Bottom Bar */}
-        <div 
+        <div
           className="border-t border-white/10 pt-8"
           style={{
             opacity: isVisible ? 1 : 0,
             transition: 'all 1s ease-out 1s'
           }}
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
             <p className="text-[#d1fae5] text-sm">
-              © {currentYear} RealWorld. All rights reserved. Designed with ❤️
+              © {currentYear} RealWorld. All rights reserved. Designed with ❤️ by
+              <a href="https://codynamixsoftwaresolutions.com" target="_blank"
+                className="text-decoration: none; color: inherit; font-weight: 600;"
+                style={{
+                  paddingLeft: "5px",
+                }}>
+                Codynamix Software Solutions
+              </a>.
             </p>
-            <div className="flex space-x-6 text-sm">
+            {/* <div className="flex space-x-6 text-sm">
               <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">Privacy Policy</a>
               <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">Terms of Service</a>
               <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">Sitemap</a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
