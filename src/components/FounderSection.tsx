@@ -1,8 +1,10 @@
-import React from 'react';
-import { Linkedin, Twitter, Mail, Quote } from 'lucide-react';
+import React, { useState } from 'react';
+import { Linkedin, Twitter, Mail, Quote, Instagram, Youtube, ArrowRight } from 'lucide-react';
 import Parveen from "../assets/praveen2.jpeg";
+import ContactPopup from './ContactPopup';
 
 export default function FounderSection() {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
   const founder = {
     name: "Praveen Pillai",
     role: "Founder & CEO",
@@ -68,18 +70,7 @@ export default function FounderSection() {
                   <p className="text-slate-700 text-lg leading-relaxed">{founder.leadership}</p>
                 </div>
 
-                {/* Key Verticals */}
-                <div className="pt-6">
-                  <h4 className="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-4">Key Verticals</h4>
-                  <div className="grid grid-cols-2 gap-3">
-                    {founder.verticals.map((vertical, index) => (
-                      <div key={index} className="flex items-center gap-3 bg-emerald-50 rounded-lg p-3 border border-emerald-100">
-                        <div className="w-2 h-2 bg-emerald-600 rounded-full flex-shrink-0"></div>
-                        <span className="text-slate-800 font-medium text-sm">{vertical}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                
               </div>
 
               {/* Social Links */}
@@ -98,14 +89,14 @@ export default function FounderSection() {
                     className="flex items-center justify-center w-12 h-12 bg-slate-100 hover:bg-emerald-600 text-slate-600 hover:text-white rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                     aria-label="Twitter"
                   >
-                    <Twitter size={20} />
+                    <Instagram size={20} />
                   </a>
                   <a 
                     href={`mailto:${founder.social.email}`}
                     className="flex items-center justify-center w-12 h-12 bg-slate-100 hover:bg-emerald-600 text-slate-600 hover:text-white rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                     aria-label="Email"
                   >
-                    <Mail size={20} />
+                    <Youtube size={20} />
                   </a>
                 </div>
               </div>
@@ -119,10 +110,17 @@ export default function FounderSection() {
           <blockquote className="text-2xl md:text-3xl font-light text-white italic max-w-4xl mx-auto leading-relaxed">
             Start small, think big, grow steadily, and deliver consistently.
           </blockquote>
-          <p className="mt-6 text-emerald-100 font-semibold text-lg">— {founder.name}</p>
+            <p className="mt-6 text-emerald-100 font-semibold text-lg">— {founder.name}</p>
           <p className="text-emerald-200 text-sm">Founder, Macins Group</p>
+          <button 
+          onClick={() => setIsPopupOpen(true)}
+          className="mt-8 group bg-white text-emerald-700 px-8 py-3 rounded-full font-semibold text-lg hover:bg-emerald-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto">
+            Connect
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+          </button>
         </div>
       </div>
+      <ContactPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </div>
   );
 }

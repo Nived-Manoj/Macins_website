@@ -52,8 +52,8 @@ function App() {
           <Route path="/energysolutions" element={<MacinsEnergySolutions />} />
           <Route path="/evcharge" element={<EVChargerPage />} />
           <Route path="/fabrication" element={<FabricationPage />} />
-           <Route path="/realestate" element={<MacinsRealEstate />} />
-            <Route path="/civilworks" element={<CivilWorksPage  />} />
+          <Route path="/realestate" element={<MacinsRealEstate />} />
+          <Route path="/civilworks" element={<CivilWorksPage  />} />
 
         </Routes>
         <Footer />

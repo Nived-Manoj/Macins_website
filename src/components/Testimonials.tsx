@@ -215,38 +215,38 @@ export default function Testimonials() {
         {
             title: 'Leasing Solutions',
             description: 'Explore our personalized rental services to find the perfect property match. We offer access to high-quality homes in desirable areas.',
-            image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 2: Modern box-style house with pool
+            image: 'url(https://images.pexels.com/photos/7546550/pexels-photo-7546550.jpeg)', // Image 2: Modern box-style house with pool
             icon: Key,
             color: 'bg-blue-700/80',
         },
-         {
-            title: 'Property Presentation',
-            description: 'Let us handle the daily operations of your property. We guarantee efficient maintenance and increased profitability.',
-            image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 1: Modern house in a mountain setting
-            icon: Home,
-            color: 'bg-green-700/80',
-        },
-        {
-            title: 'Leasing Solutions',
-            description: 'Explore our personalized rental services to find the perfect property match. We offer access to high-quality homes in desirable areas.',
-            image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 2: Modern box-style house with pool
-            icon: Key,
-            color: 'bg-blue-700/80',
-        },
-         {
-            title: 'Property Presentation',
-            description: 'Let us handle the daily operations of your property. We guarantee efficient maintenance and increased profitability.',
-            image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 1: Modern house in a mountain setting
-            icon: Home,
-            color: 'bg-green-700/80',
-        },
-        {
-            title: 'Leasing Solutions',
-            description: 'Explore our personalized rental services to find the perfect property match. We offer access to high-quality homes in desirable areas.',
-            image: 'url(https://images.unsplash.com/photo-1580587771525-783a3d5e2e81?w=800&q=80&fit=crop&crop=entropy&auto=format)', // Image 2: Modern box-style house with pool
-            icon: Key,
-            color: 'bg-blue-700/80',
-        },
+        //  {
+        //     title: 'Property Presentation',
+        //     description: 'Let us handle the daily operations of your property. We guarantee efficient maintenance and increased profitability.',
+        //     image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 1: Modern house in a mountain setting
+        //     icon: Home,
+        //     color: 'bg-green-700/80',
+        // },
+        // {
+        //     title: 'Leasing Solutions',
+        //     description: 'Explore our personalized rental services to find the perfect property match. We offer access to high-quality homes in desirable areas.',
+        //     image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 2: Modern box-style house with pool
+        //     icon: Key,
+        //     color: 'bg-blue-700/80',
+        // },
+        //  {
+        //     title: 'Property Presentation',
+        //     description: 'Let us handle the daily operations of your property. We guarantee efficient maintenance and increased profitability.',
+        //     image: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000)', // Image 1: Modern house in a mountain setting
+        //     icon: Home,
+        //     color: 'bg-green-700/80',
+        // },
+        // {
+        //     title: 'Leasing Solutions',
+        //     description: 'Explore our personalized rental services to find the perfect property match. We offer access to high-quality homes in desirable areas.',
+        //     image: 'url(https://images.unsplash.com/photo-1580587771525-783a3d5e2e81?w=800&q=80&fit=crop&crop=entropy&auto=format)', // Image 2: Modern box-style house with pool
+        //     icon: Key,
+        //     color: 'bg-blue-700/80',
+        // },
     ];
 
     const goToNext = () => {

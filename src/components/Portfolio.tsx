@@ -160,9 +160,9 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
-      location: 'Dubai Marina Tower',
+      location: 'Site Preparation',
       category: 'Construction',
-      image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?q=80&w=2070',
       price: '$50M',
       beds: 10,
       baths: 12,
@@ -174,7 +174,7 @@ export default function Portfolio() {
       id: 2,
       location: 'Smart Energy Grid',
       category: 'Energy',
-      image: 'https://images.pexels.com/photos/9875415/pexels-photo-9875415.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=800',
       price: '$12M',
       beds: 0,
       baths: 0,
@@ -198,7 +198,7 @@ export default function Portfolio() {
       id: 4,
       location: 'EV Charging Hub',
       category: 'Infrastructure',
-      image: 'https://images.pexels.com/photos/7656740/pexels-photo-7656740.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/9800006/pexels-photo-9800006.jpeg',
       price: '$4.5M',
       beds: 0,
       baths: 0,
@@ -208,26 +208,26 @@ export default function Portfolio() {
     },
      {
       id: 4,
-      location: 'EV Charging Hub',
-      category: 'Infrastructure',
-      image: 'https://images.pexels.com/photos/7656740/pexels-photo-7656740.jpeg?auto=compress&cs=tinysrgb&w=800',
+      location: 'Luxuary Interiors',
+      category: 'Interior',
+      image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800',
       price: '$4.5M',
       beds: 0,
       baths: 0,
       sqft: '10 Stations',
-      description: 'Multi-station EV charging facility with integrated canopy.',
+      description: 'Building Foundations, Shaping Futures',
       featured: false
     },
      {
       id: 4,
-      location: 'EV Charging Hub',
+      location: 'Luxuary Home',
       category: 'Infrastructure',
-      image: 'https://images.pexels.com/photos/7656740/pexels-photo-7656740.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
       price: '$4.5M',
       beds: 0,
       baths: 0,
       sqft: '10 Stations',
-      description: 'Multi-station EV charging facility with integrated canopy.',
+      description: 'Luxury residential tower with cutting-edge MEP systems.',
       featured: false
     },
     {
@@ -353,40 +353,13 @@ export default function Portfolio() {
                         <h3 className="text-xl font-extrabold text-emerald-900 leading-tight flex-1 pr-2">
                           {project.location}
                         </h3>
-                        <span className="text-xl font-bold text-emerald-900 whitespace-nowrap">
-                          {project.price}
-                        </span>
+                        
                       </div>
                       <p className="text-stone-600 text-sm mb-4 line-clamp-2">
                         {project.description}
                       </p>
                       
-                      {/* Property Details */}
-                      {project.beds > 0 ? (
-                        <div className="flex flex-wrap gap-4 text-stone-600 text-sm font-semibold">
-                          <div className="flex items-center">
-                            <Bed className="w-4 h-4 mr-1 text-emerald-900" />
-                            <span>{project.beds} Beds</span>
-                          </div>
-                          <div className="flex items-center">
-                            <Bath className="w-4 h-4 mr-1 text-emerald-900" />
-                            <span>{project.baths} Baths</span>
-                          </div>
-                          <div className="flex items-center">
-                            <svg className="w-4 h-4 mr-1 text-emerald-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-5v4m0 0h-4m4-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 0h-4m4 4l-5-5" />
-                            </svg>
-                            <span>{project.sqft}</span>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="flex items-center text-stone-600 text-sm font-semibold">
-                          <svg className="w-4 h-4 mr-1 text-emerald-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                          </svg>
-                          <span>{project.sqft}</span>
-                        </div>
-                      )}
+                      
                     </div>
                   ) : (
                     /* Featured Card Layout */

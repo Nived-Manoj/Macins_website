@@ -264,7 +264,7 @@ export default function Sustainability() {
   // Content adapted for the image's structure
   const initiativeCardData = [
     {
-      city: 'Chicago, IL',
+      city: 'Office Fit-Outs',
       icon: Sun,
       rating: '4.8',
       beds: 5,
@@ -274,10 +274,10 @@ export default function Sustainability() {
       price: '$1,750,000',
       stat: '40%',
       label: 'Energy Savings',
-      image: 'image_e89964_chicago.jpg' // Placeholder for actual image
+      image: 'https://img1.wsimg.com/isteam/ip/9e4a5c06-f47b-488e-a820-94cfc3f8cda0/josh-boot--L5W8-yFERs-unsplash.jpg/:/cr=t:0%25,l:26.65%25,w:46.7%25,h:100%25/rs=w:600,h:800,cg:true' // Placeholder for actual image
     },
     {
-      city: 'Los Angeles, CA',
+      city: 'Retail & Commercial Interiors',
       icon: Zap,
       rating: '4.5',
       beds: 4,
@@ -290,7 +290,7 @@ export default function Sustainability() {
       image: 'image_e89964_la.jpg'
     },
     {
-      city: 'Seattle, WA',
+      city: 'Luxury Residential Fit-Outs',
       icon: Leaf,
       rating: '4.6',
       beds: 3,
@@ -317,9 +317,9 @@ export default function Sustainability() {
   // Utility to handle placeholder images (since we cannot display real images)
   const getPlaceholderStyle = (index) => {
     const backgrounds = [
-      'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800)',
-      'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800)',
-      'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800)',
+      'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(https://img1.wsimg.com/isteam/ip/9e4a5c06-f47b-488e-a820-94cfc3f8cda0/josh-boot--L5W8-yFERs-unsplash.jpg/:/cr=t:0%25,l:26.65%25,w:46.7%25,h:100%25/rs=w:600,h:800,cg:true)',
+      'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(https://images.pexels.com/photos/11875898/pexels-photo-11875898.jpeg)',
+      'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(https://images.pexels.com/photos/35143428/pexels-photo-35143428.jpeg)',
     ];
     return {
       backgroundImage: backgrounds[index % backgrounds.length],
@@ -380,12 +380,12 @@ export default function Sustainability() {
               {/* Text Overlay at Bottom */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
                 <h3 className="text-xl font-bold mb-1 leading-snug">{data.city}</h3>
-                <p className="text-sm opacity-90 mb-3">
+                {/* <p className="text-sm opacity-90 mb-3">
                   {data.beds} <Bed size={14} className="inline mr-1" />Beds, {data.baths} <Bath size={14} className="inline mr-1" />Baths, {data.sqft}
                 </p>
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg font-semibold text-sm">
                   {data.price}
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
@@ -413,7 +413,7 @@ export default function Sustainability() {
     style={{
       // Use a new image URL that aligns with the modern, luxurious, and eco-friendly theme
       // Increased the black gradient opacity for better text contrast, matching the image.
-      backgroundImage: 'linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800)', 
+      backgroundImage: 'linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(https://images.pexels.com/photos/1114875/pexels-photo-1114875.jpeg)', 
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }}

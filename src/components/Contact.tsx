@@ -35,7 +35,7 @@
 //     {
 //       city: 'Dubai, UAE',
 //       address: 'Business Bay, Dubai',
-//       phone: '+971 23 123 456',
+//       phone: '+971 55 456 0554 ',
 //       email: 'dubai@macinsgroup.com',
 //     },
 //     {
@@ -283,21 +283,21 @@ export default function Contact() {
     {
       city: 'Dubai, UAE',
       address: 'Business Bay, Dubai, UAE',
-      phone: '+971 23 123 456',
+      phone: '+971 55 456 0554 ',
       email: 'dubai@realworld.com'
     },
-    {
-      city: 'Riyadh, KSA',
-      address: 'King Abdullah Rd, Riyadh, KSA',
-      phone: '+966 11 234 5678',
-      email: 'saudi@realworld.com'
-    },
-    {
-      city: 'Mumbai, India',
-      address: 'Lower Parel, Mumbai, India',
-      phone: '+91 22 1234 5678',
-      email: 'india@realworld.com'
-    },
+    // {
+    //   city: 'Riyadh, KSA',
+    //   address: 'King Abdullah Rd, Riyadh, KSA',
+    //   phone: '+966 11 234 5678',
+    //   email: 'saudi@realworld.com'
+    // },
+    // {
+    //   city: 'Mumbai, India',
+    //   address: 'Lower Parel, Mumbai, India',
+    //   phone: '+91 22 1234 5678',
+    //   email: 'india@realworld.com'
+    // },
   ];
 
   // Animation hook
@@ -346,11 +346,11 @@ export default function Contact() {
       }}
     >
       {/* Massive REALWORLD background text */}
-      <div className="absolute inset-0 flex items-end justify-end opacity-[0.08] pointer-events-none overflow-hidden">
+      {/* <div className="absolute inset-0 flex items-end justify-end opacity-[0.08] pointer-events-none overflow-hidden">
         <span className="text-[18vw] lg:text-[12vw] font-black text-white whitespace-nowrap leading-none tracking-[0.2em]" style={{ fontWeight: 900 }}>
           MACINS MACINS
         </span>
-      </div>
+      </div> */}
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         
@@ -372,8 +372,8 @@ export default function Contact() {
         </div>
 
         {/* 1. Office Locations (Placed ABOVE the Form) */}
-        <div 
-          className="mb-20 grid md:grid-cols-3 gap-6 max-w-7xl mx-auto"
+        {/* <div 
+          className="mb-20 grid md:grid-cols-1 gap-6 max-w-7xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
@@ -408,7 +408,7 @@ export default function Contact() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
 
         {/* 2. Main Contact Card (Form and Image) */}
