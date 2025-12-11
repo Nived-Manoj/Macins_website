@@ -67,7 +67,7 @@
 //               }`}
 //             >
 //               <Phone size={18} className="group-hover:rotate-12 transition-transform duration-300" />
-//               <span>(971) 23 123 456</span>
+//               <span>(971) 55 456 0554</span>
 //             </a>
 //           </div>
 
@@ -100,7 +100,7 @@
 //               className="flex items-center space-x-2 px-6 py-3 bg-[#e3ff1e] text-[#465a50] rounded-full w-full justify-center font-semibold hover:bg-[#465a50] hover:text-white transition-all duration-300 shadow-lg"
 //             >
 //               <Phone size={18} />
-//               <span>(971) 23 123 456</span>
+//               <span>(971) 55 456 0554</span>
 //             </a>
 //           </div>
 //         )}
@@ -189,7 +189,7 @@ export default function Navbar() {
               }`}
             >
               <Phone size={18} className="group-hover:rotate-12 transition-transform duration-300" />
-              <span className="text-sm">(971) 23 123 456</span>
+              <span className="text-sm">(971) 55 456 0554</span>
             </a>
             <a
               href="#contact"
@@ -248,7 +248,7 @@ export default function Navbar() {
                 className="flex items-center justify-center space-x-2 px-6 py-3 bg-[#f0fdf4] text-[#059669] rounded-xl font-semibold hover:bg-[#059669] hover:text-white transition-all duration-300 shadow-md"
               >
                 <Phone size={18} />
-                <span>(971) 23 123 456</span>
+                <span>(971) 55 456 0554</span>
               </a>
               <a
                 href="#contact"

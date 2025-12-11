@@ -161,14 +161,14 @@ export default function Footer() {
             <h4 className="text-xl font-bold mb-6 text-white">Contact Info</h4>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 group">
-              <a
-  href="https://maps.app.goo.gl/Tks1PJ1xiwPKvDLD8"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#10b981] transition-all duration-300"
->
-  <MapPin size={20} className="text-[#10b981] group-hover:text-white transition-colors duration-300" />
-</a>
+                <a
+                  href="https://maps.app.goo.gl/Tks1PJ1xiwPKvDLD8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#10b981] transition-all duration-300"
+                >
+                  <MapPin size={20} className="text-[#10b981] group-hover:text-white transition-colors duration-300" />
+                </a>
 
                 <span className="text-[#d1fae5] leading-relaxed pt-2">Platinum Business Tower - Baghdad Street - opp. Millenium school - Dubai - United Arab Emirates</span>
               </li>
@@ -177,7 +177,7 @@ export default function Footer() {
                   <Phone size={20} className="text-[#10b981] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <a href="tel:+971554560554" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
-                  +971 55 456 0554 
+                  +971 55 456 0554
                 </a>
               </li>
               <li className="flex items-center space-x-3 group">
@@ -185,9 +185,9 @@ export default function Footer() {
                   <Mail size={20} className="text-[#10b981] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <a href="mailto:info@realworld.com" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
-                  Info@macins.ae 
+                  Info@macins.ae
                 </a>
-                 <a href="mailto:support@macins.ae" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
+                <a href="mailto:support@macins.ae" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
                   support@macins.ae
                 </a>
               </li>

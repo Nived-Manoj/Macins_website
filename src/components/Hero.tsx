@@ -31,7 +31,7 @@
 //                 className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30 transition-all border border-white/30"
 //               >
 //                 <Phone size={20} />
-//                 <span className="font-semibold">(971) 23 123 456</span>
+//                 <span className="font-semibold">(971) 55 456 0554</span>
 //               </a>
 //               <a
 //                 href="#contact"
@@ -106,7 +106,7 @@
 //                 className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white text-orange-600 rounded-full hover:bg-orange-50 transition-all border-2 border-orange-200 shadow-md"
 //               >
 //                 <Phone size={20} />
-//                 <span className="font-semibold">(971) 23 123 456</span>
+//                 <span className="font-semibold">(971) 55 456 0554</span>
 //               </a>
 //               <a
 //                 href="#contact"
@@ -193,7 +193,7 @@
 //                 className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white text-emerald-700 rounded-full hover:bg-stone-50 transition-all border-2 border-stone-200 shadow-md"
 //               >
 //                 <Phone size={20} />
-//                 <span className="font-semibold">(971) 23 123 456</span>
+//                 <span className="font-semibold">(971) 55 456 0554</span>
 //               </a>
 //               <a
 //                 href="#contact"
@@ -278,7 +278,7 @@ Building tomorrow’s infrastructure today. Macins Group delivers excellence acr
                 className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white text-emerald-700 rounded-full hover:bg-stone-50 transition-all border-2 border-stone-200 shadow-md"
               >
                 <Phone size={20} />
-                <span className="font-semibold">(971) 23 123 456</span>
+                <span className="font-semibold">(971) 55 456 0554</span>
               </a>
               <a
                 href="#contact"
