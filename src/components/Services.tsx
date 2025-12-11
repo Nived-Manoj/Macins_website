@@ -77,7 +77,7 @@ export default function Services() {
       specs: "Building Foundations, Shaping Futures. Our civil division covers all core construction activities needed to prepare, build and support projects of any scale",
       price: "$1,450,000",
       image: CivilService,
-      link: ""
+      link: "/civilworks"
     },
     {
       title: "BMS & RETROFIT",
@@ -93,7 +93,7 @@ export default function Services() {
       specs: "The company takes charge of the entire process, including design, construction, financing, and operation and maintenance, to help clients achieve their decarbonization targets",
       price: "$1,200,000",
       image: EnergySolutions,
-      link: ""
+      link: "/energysolutions"
     },
     {
       title: "EV SOLUTIONS",
@@ -101,7 +101,7 @@ export default function Services() {
       specs: "With a focus on quality and customer satisfaction, we have successfully completed numerous projects in UAE",
       price: "$1,450,000",
       image: EvService,
-      link: ""
+      link: "/evcharge"
     },
     {
       title: "FIT OUT",
@@ -109,7 +109,7 @@ export default function Services() {
       specs: "Our methodical and inventive delivery approach provides our clients with a comprehensive, experiential fit out solution managed under a single agreement",
       price: "$1,750,000",
       image: FitOut,
-      link: ""
+      link: "/fitout"
     },
     {
       title: "FABRICATION",
@@ -117,7 +117,7 @@ export default function Services() {
       specs: "We provide fabrication services for various project types in industries such as healthcare, industrial, commercial, and residential",
       price: "$1,200,000",
       image: FabricationSErvice,
-      link: ""
+      link: "/fabrication"
     },
         {
       title: "MEP CONTRACTING",
@@ -133,7 +133,7 @@ export default function Services() {
       specs: "Our real estate division is committed to delivering premium developments and property management solutions across the UAE",
       price: "$895,000",
       image: RealEstate,
-      link: ""
+      link: "/realestate"
     },
   ];
 

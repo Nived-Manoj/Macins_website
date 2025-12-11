@@ -105,7 +105,7 @@ export default function BMSRetrofitPage() {
                     }}
                 >
                     <button
-                    onClick={() => (window.location.href = "/#services")}
+                        onClick={() => (window.location.href = "/#services")}
                         // onClick={() => navigate('/')}
                         className="flex items-center gap-2 text-gray-700 hover:text-teal-600 transition-all duration-300 group"
                     >

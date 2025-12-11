@@ -12,16 +12,22 @@ import Footer from './components/Footer';
 import Projects from './components/Projects';
 import DuplicateContact from './components/DuplicateContact';
 import FounderSection from './components/FounderSection';
-import PropertyDetail from './components/PropertyDetail'; 
+import PropertyDetail from './components/PropertyDetail';
 import BMSRetroPage from "./components/BMSRetrofitPage";
 import MEPServicesPage from './components/MEPServicesPage ';
+import MacinsInteriorFitout from './components/MacinsInteriorFitout ';
+import MacinsEnergySolutions from './components/MacinsEnergySolutions';
+import EVChargerPage from './components/EVChargerPage';
+import FabricationPage from './components/FabricationPage';
+import MacinsRealEstate from './components/MacinsRealEstate';
+import CivilWorksPage from './components/CivilWorksPage';
 // Create a HomePage component with all your sections
 function HomePage() {
   return (
     <>
       <Hero />
       <About />
-      <FounderSection/>
+      <FounderSection />
       <Services />
       <Portfolio />
       <Sustainability />
@@ -41,7 +47,14 @@ function App() {
           <Route path="/#contact" element={<HomePage />} />
           <Route path="/property/:id" element={<PropertyDetail />} />
           <Route path="/bms-retrofit" element={<BMSRetroPage />} />
-           <Route path="/mep_service" element={<MEPServicesPage />} />
+          <Route path="/mep_service" element={<MEPServicesPage />} />
+          <Route path="/fitout" element={<MacinsInteriorFitout />} />
+          <Route path="/energysolutions" element={<MacinsEnergySolutions />} />
+          <Route path="/evcharge" element={<EVChargerPage />} />
+          <Route path="/fabrication" element={<FabricationPage />} />
+           <Route path="/realestate" element={<MacinsRealEstate />} />
+            <Route path="/civilworks" element={<CivilWorksPage  />} />
+
         </Routes>
         <Footer />
       </div>
