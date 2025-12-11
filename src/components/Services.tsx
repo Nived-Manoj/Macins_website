@@ -4,6 +4,20 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import BuildingAutomation from "../assets/building_automation.jpg";
+import CivilService from "../assets/civil_service.jpg";
+import EnergySolutions from "../assets/energy_solutions_service.webp";
+import EvService from "../assets/ev_service.jpg";
+import FitOut from "../assets/fitout_service.webp";
+import MepService from "../assets/mep_service.webp";
+import FabricationSErvice from "../assets/fabrication_service.webp";
+import RealEstate from "../assets/real_estate.jpg";
+
+
+
+
+
+
 export default function Services() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -40,16 +54,7 @@ export default function Services() {
       }
     };
 
-    // start autoscroll
-    // scrollInterval = window.setInterval(() => {
-    //   // If we are at the end, scroll back to the start
-    //   if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
-    //     container.scrollTo({ left: 0, behavior: 'smooth' });
-    //   } else {
-    //     // Scroll right by a small amount
-    //     container.scrollBy({ left: 1, behavior: 'auto' });
-    //   }
-    // }, 50); // Adjust interval for desired speed
+   
 
     // Stop autoscroll when user interacts with the container
     container.addEventListener('mouseenter', handleInteraction);
@@ -65,55 +70,71 @@ export default function Services() {
   }, []); // Empty dependency array means this runs once on mount
 
   const listings = [
+
     {
-      title: "Miami, FL",
+      title: "CIVIL WORKS",
+      location: "Hill Country",
+      specs: "Building Foundations, Shaping Futures. Our civil division covers all core construction activities needed to prepare, build and support projects of any scale",
+      price: "$1,450,000",
+      image: CivilService,
+      link: ""
+    },
+    {
+      title: "BMS & RETROFIT",
+      location: "Lincoln Park",
+      specs: "Empowering Buildings with Intelligent, Energy-Efficient Solutions",
+      price: "$1,750,000",
+      image: BuildingAutomation,
+      link: "/bms-retrofit"
+    },
+    {
+      title: "ENERGY SOLUTIONS",
+      location: "Queen Anne",
+      specs: "The company takes charge of the entire process, including design, construction, financing, and operation and maintenance, to help clients achieve their decarbonization targets",
+      price: "$1,200,000",
+      image: EnergySolutions,
+      link: ""
+    },
+    {
+      title: "EV SOLUTIONS",
+      location: "Hill Country",
+      specs: "With a focus on quality and customer satisfaction, we have successfully completed numerous projects in UAE",
+      price: "$1,450,000",
+      image: EvService,
+      link: ""
+    },
+    {
+      title: "FIT OUT",
+      location: "Lincoln Park",
+      specs: "Our methodical and inventive delivery approach provides our clients with a comprehensive, experiential fit out solution managed under a single agreement",
+      price: "$1,750,000",
+      image: FitOut,
+      link: ""
+    },
+    {
+      title: "FABRICATION",
+      location: "Queen Anne",
+      specs: "We provide fabrication services for various project types in industries such as healthcare, industrial, commercial, and residential",
+      price: "$1,200,000",
+      image: FabricationSErvice,
+      link: ""
+    },
+        {
+      title: "MEP CONTRACTING",
       location: "South Beach",
-      specs: "3 beds, 2 baths, 1,900 sq ft",
+      specs: " Our reputation as a trusted MEP contractor is built on a consistent track record of professional excellence, timely project delivery, and a relentless focus on quality",
       price: "$895,000",
-      image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=1000",
+      image: MepService,
+      link: "/mep_service"
     },
     {
-      title: "Austin, TX",
-      location: "Hill Country",
-      specs: "4 beds, 3 baths, 2,400 sq ft",
-      price: "$1,450,000",
-      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1000",
+      title: "REAL ESTATE",
+      location: "South Beach",
+      specs: "Our real estate division is committed to delivering premium developments and property management solutions across the UAE",
+      price: "$895,000",
+      image: RealEstate,
+      link: ""
     },
-    {
-      title: "Chicago, IL",
-      location: "Lincoln Park",
-      specs: "5 beds, 4 baths, 3,200 sq ft",
-      price: "$1,750,000",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
-    },
-    {
-      title: "Seattle, WA",
-      location: "Queen Anne",
-      specs: "3 beds, 2 baths, 2,100 sq ft",
-      price: "$1,200,000",
-      image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80&w=1000",
-    },
-    {
-      title: "Austin, TX",
-      location: "Hill Country",
-      specs: "4 beds, 3 baths, 2,400 sq ft",
-      price: "$1,450,000",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=1000",
-    },
-    {
-      title: "Chicago, IL",
-      location: "Lincoln Park",
-      specs: "5 beds, 4 baths, 3,200 sq ft",
-      price: "$1,750,000",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000",
-    },
-    {
-      title: "Seattle, WA",
-      location: "Queen Anne",
-      specs: "3 beds, 2 baths, 2,100 sq ft",
-      price: "$1,200,000",
-      image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=1000",
-    }
   ];
 
   return (
@@ -245,14 +266,14 @@ export default function Services() {
           >
             <div className="mt-4 flex flex-col">
               <p className="text-sm text-gray-500 mb-4">
-                {item.specs} <br />
+                {/* {item.specs} <br /> */}
                 <span className="text-xs text-gray-400 font-light">
-                  Contemporary style with spacious backyard
+                  {item.specs} 
                 </span>
               </p>
 
               <button
-                onClick={() => navigate(`/property/${index}`)}
+                onClick={() => navigate(`${item.link}`)}
                 className="w-full mt-4 bg-gray-900 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300 text-sm"
               >
                 EXPLORE MORE

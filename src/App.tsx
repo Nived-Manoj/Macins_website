@@ -12,8 +12,9 @@ import Footer from './components/Footer';
 import Projects from './components/Projects';
 import DuplicateContact from './components/DuplicateContact';
 import FounderSection from './components/FounderSection';
-import PropertyDetail from './components/PropertyDetail'; // Import the detail page
-
+import PropertyDetail from './components/PropertyDetail'; 
+import BMSRetroPage from "./components/BMSRetrofitPage";
+import MEPServicesPage from './components/MEPServicesPage ';
 // Create a HomePage component with all your sections
 function HomePage() {
   return (
@@ -37,7 +38,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/#contact" element={<HomePage />} />
           <Route path="/property/:id" element={<PropertyDetail />} />
+          <Route path="/bms-retrofit" element={<BMSRetroPage />} />
+           <Route path="/mep_service" element={<MEPServicesPage />} />
         </Routes>
         <Footer />
       </div>
