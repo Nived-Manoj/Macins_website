@@ -23,6 +23,7 @@ import MacinsRealEstate from './components/MacinsRealEstate';
 import CivilWorksPage from './components/CivilWorksPage';
 import ThankYouScreen from './components/ThankYouScreen';
 import ProjectSection from './components/ProjectSection';
+import ClientLogos from './components/ClientLogs';
 
 // Create a HomePage component with all your sections
 function HomePage() {
@@ -33,6 +34,7 @@ function HomePage() {
       <FounderSection />
       <Services />
       <Portfolio />
+      <ClientLogos/>
       <Sustainability />
       <Testimonials />
       <Contact />

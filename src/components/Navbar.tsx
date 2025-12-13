@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import WhiteLogo from "../assets/White.png";
+import DarkLogo from "../assets/Black.png";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,25 +31,28 @@ export default function Navbar() {
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-2xl py-4' 
-          : 'bg-gradient-to-b from-[#064e3b]/90 to-transparent backdrop-blur-sm py-6'
+          ? 'bg-white/95 backdrop-blur-lg shadow-2xl py-0' 
+          : 'bg-gradient-to-b from-[#064e3b]/90 to-transparent backdrop-blur-sm py-0'
       }`}
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${
-              isScrolled ? 'bg-gradient-to-br from-[#064e3b] to-[#059669]' : 'bg-white/20'
-            }`}>
-              <span className="text-white font-black text-xl">R</span>
-            </div>
-            <div className={`text-2xl font-bold transition-all duration-300 ${
-              isScrolled ? 'text-[#064e3b]' : 'text-white'
-            }`}>
-              <span style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>Macins Group</span>
-            </div>
-          </div>
+  <div className="w-20 h-20 flex items-center justify-center transition-all duration-300">
+    <img 
+      src={isScrolled ? DarkLogo : WhiteLogo} 
+      alt="Logo" 
+
+      className="w-full h-full object-contain transition-all duration-300" 
+    />
+  </div>
+  <div className={`text-2xl font-bold transition-all duration-300 ${
+    isScrolled ? 'text-[#064e3b]' : 'text-white'
+  }`}>
+    {/* <span style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>Macins Group</span> */}
+  </div>
+</div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
