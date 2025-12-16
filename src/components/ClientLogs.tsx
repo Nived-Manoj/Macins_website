@@ -1,5 +1,26 @@
 import React from 'react';
 import Abudhabi from "../assets/clients/abudhabi.png";
+import Dubai from "../assets/clients/dubai.png";
+import Alain from "../assets/clients/alain.jfif";
+import Appareal from "../assets/clients/appareal.png";
+import Aried from "../assets/clients/aries.jfif";
+import Bab from "../assets/clients/bab.jfif";
+import CityUniversity from "../assets/clients/cityUniversity.png";
+import DpWoris from "../assets/clients/dpWorls.jfif";
+import Emaar from "../assets/clients/emaar.png";
+import Enova from "../assets/clients/enova.png";
+import Global from "../assets/clients/global.jfif";
+import Image from "../assets/clients/images.png";
+import IslamicAffairs from "../assets/clients/islamicAffairs.jfif";
+import Khidma from "../assets/clients/khidma.jfif";
+import MajidFuttai from "../assets/clients/majidFuttaim.png";
+import inistry from "../assets/clients/ministry.jfif";
+import Provis from "../assets/clients/provis.jfif";
+import ShuaaEnergy from "../assets/clients/shuaaEnergy.jfif";
+import Tesla from "../assets/clients/tesla.png";
+import TransGit from "../assets/clients/transgilf.jfif";
+import VoxCinesa from "../assets/clients/voxCineas.png";
+import WorldScruity from "../assets/clients/worldScurity.jfif";
 
 
 const ClientLogos = () => {
@@ -7,21 +28,33 @@ const ClientLogos = () => {
  // Sample client logos - replace with your actual logo URLs
   const clients = [
     { name: 'Client 1', logo: Abudhabi },
-    { name: 'Client 2', logo: Abudhabi },
-    { name: 'Client 3', logo: Abudhabi },
-    { name: 'Client 4', logo: Abudhabi },
-    { name: 'Client 5', logo: Abudhabi },
-    { name: 'Client 6', logo: Abudhabi },
-    { name: 'Client 7', logo: Abudhabi },
-    { name: 'Client 8', logo: Abudhabi },
-     { name: 'Client 1', logo: Abudhabi },
-    { name: 'Client 2', logo: Abudhabi },
-    { name: 'Client 3', logo: Abudhabi },
-    { name: 'Client 4', logo: Abudhabi },
-    { name: 'Client 5', logo: Abudhabi },
-    { name: 'Client 6', logo: Abudhabi },
-    { name: 'Client 7', logo: Abudhabi },
-    { name: 'Client 8', logo: Abudhabi },
+    { name: 'Client 2', logo: Dubai },
+    { name: 'Client 3', logo: Alain },
+    { name: 'Client 4', logo: Appareal },
+    { name: 'Client 5', logo: Aried },
+    { name: 'Client 6', logo: Bab },
+    { name: 'Client 7', logo: CityUniversity },
+    { name: 'Client 8', logo: DpWoris },
+     { name: 'Client 1', logo: Emaar },
+    { name: 'Client 2', logo: Enova },
+    { name: 'Client 3', logo: Global },
+    { name: 'Client 4', logo: Image },
+    { name: 'Client 5', logo: IslamicAffairs },
+    { name: 'Client 6', logo: Khidma },
+    { name: 'Client 7', logo: MajidFuttai },
+    { name: 'Client 8', logo: inistry },
+    { name: 'Client 8', logo: Provis },  
+      { name: 'Client 8', logo: ShuaaEnergy },
+          { name: 'Client 8', logo: Tesla },
+              { name: 'Client 8', logo: TransGit },
+                  { name: 'Client 8', logo: VoxCinesa },
+                      { name: 'Client 8', logo: WorldScruity },
+
+
+
+
+
+
   ];
 
   return (

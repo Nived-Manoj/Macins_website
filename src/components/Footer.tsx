@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import WhiteLogo from "../assets/White.png";
+
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,9 +40,12 @@ export default function Footer() {
             }}
           >
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#059669] to-[#10b981] flex items-center justify-center">
-                <span className="text-white font-black text-xl">R</span>
-              </div>
+               <img 
+      src={ WhiteLogo} 
+      alt="Logo" 
+
+      className="w-20 h-20 object-contain transition-all duration-300" 
+    />
               <div className="text-2xl font-bold">
                 <span style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>MACINS GROUP</span>
               </div>
@@ -52,9 +57,7 @@ export default function Footer() {
               <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
-                <Twitter size={20} />
-              </a>
+              
               <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Linkedin size={20} />
               </a>
