@@ -22,6 +22,7 @@ import Ev5 from "../assets/projects/ev5.png";
 import Ev6 from "../assets/projects/ev6.png";
 import Ev7 from "../assets/projects/ev7.png";
 import ContactPopup from './ContactPopup';
+import ProjectsShowcase from './ProjectsShowcase';
 
 
 const ProjectSection = () => {
@@ -206,80 +207,12 @@ const ProjectSection = () => {
                     </div>
                 </div>
             </section>
+            <ProjectsShowcase/>
 
-            {/* Category Filter */}
-            <div className="bg-white border-b top-[100px] z-30 shadow-sm">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                    <div className="flex flex-wrap gap-3">
-                        {categories.map(category => (
-                            <button
-                                key={category.id}
-                                onClick={() => setSelectedCategory(category.id)}
-                                className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${selectedCategory === category.id
-                                    ? 'bg-[#064e3b] text-white shadow-lg scale-105'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                    }`}
-                            >
-                                {category.name}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </div>
+          
 
-            {/* Projects Grid */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                {selectedCategory !== 'all' && (
-                    <div className="mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                            {projects[selectedCategory as keyof typeof projects].title}
-                        </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed max-w-4xl">
-                            {projects[selectedCategory as keyof typeof projects].description}
-                        </p>
-                    </div>
-                )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredProjects.map((project, index) => (
-                        <div
-                            key={index}
-                            className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-white"
-                            onClick={() => setLightboxImage(project.image)}
-                        >
-                            <div className="aspect-[4/3] overflow-hidden">
-                                <img
-                                    src={project.image}
-                                    alt={`${project.title} ${index + 1}`}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                            </div>
-
-                        </div>
-                    ))}
-                </div>
-            </main>
-
-            {/* Lightbox */}
-            {lightboxImage && (
-                <div
-                    className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
-                    onClick={() => setLightboxImage(null)}
-                >
-                    <button
-                        onClick={() => setLightboxImage(null)}
-                        className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
-                    >
-                        <X size={32} />
-                    </button>
-                    <img
-                        src={lightboxImage}
-                        alt="Project detail"
-                        className="max-w-full max-h-full object-contain rounded-lg"
-                        onClick={(e) => e.stopPropagation()}
-                    />
-                </div>
-            )}
+           
 
             <ContactPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
         </div>

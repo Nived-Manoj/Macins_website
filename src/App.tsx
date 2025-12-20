@@ -24,7 +24,6 @@ import CivilWorksPage from './components/CivilWorksPage';
 import ThankYouScreen from './components/ThankYouScreen';
 import ProjectSection from './components/ProjectSection';
 import ClientLogos from './components/ClientLogs';
-import ProjectsShowcase from './components/ProjectsShowcase';
 
 // Create a HomePage component with all your sections
 function HomePage() {
@@ -64,7 +63,7 @@ function Layout() {
         <Route path="/fabrication" element={<FabricationPage />} />
         <Route path="/realestate" element={<MacinsRealEstate />} />
         <Route path="/civilworks" element={<CivilWorksPage />} />
-        <Route path="/projectsection" element={<ProjectsShowcase />} />
+        <Route path="/projectsection" element={<ProjectSection />} />
         <Route path="/thankyou" element={<ThankYouScreen
           onGoHome={() => window.location.href = '/'}
           whatsappNumber="+971554560554"

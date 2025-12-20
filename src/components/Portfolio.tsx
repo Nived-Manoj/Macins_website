@@ -297,7 +297,7 @@ export default function Portfolio() {
           </p>
 
           {/* Filter Buttons - Color adjusted to match the theme */}
-          <div className="flex flex-wrap justify-center gap-4">
+          {/* <div className="flex flex-wrap justify-center gap-4">
             {filters.map((filter) => (
               <button
                 key={filter}
@@ -310,11 +310,11 @@ export default function Portfolio() {
                 {filter}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Projects Grid - Using the large/featured card design from Projects component */}
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+       {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
@@ -325,9 +325,7 @@ export default function Portfolio() {
                 transition: `all 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.15 + 0.3}s`
               }}
             >
-              {/* Card */}
               <div className="bg-white rounded-3xl overflow-hidden shadow-xl transition-all duration-500 h-full transform hover:scale-[1.02] hover:shadow-2xl">
-                {/* Image Container */}
                 <div className={`relative overflow-hidden ${project.featured ? 'h-80 lg:h-96' : 'h-64'}`}>
                   <img
                     src={project.image}
@@ -336,7 +334,6 @@ export default function Portfolio() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                   
-                  {/* Featured Tag */}
                   {project.featured && (
                     <span className="absolute top-6 left-6 px-4 py-2 bg-white text-emerald-900 font-bold rounded-full text-sm shadow-md">
                       FEATURED LISTING
@@ -344,10 +341,8 @@ export default function Portfolio() {
                   )}
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
                   {!project.featured ? (
-                    /* Standard Card Layout */
                     <div>
                       <div className="flex justify-between items-start mb-3">
                         <h3 className="text-xl font-extrabold text-emerald-900 leading-tight flex-1 pr-2">
@@ -362,7 +357,6 @@ export default function Portfolio() {
                       
                     </div>
                   ) : (
-                    /* Featured Card Layout */
                     <div>
                       <h3 className="text-3xl font-extrabold text-emerald-900 mb-3">
                         {project.location}
@@ -371,7 +365,6 @@ export default function Portfolio() {
                         {project.description}
                       </p>
                       
-                      {/* Property Stats Grid */}
                       <div className="grid grid-cols-3 gap-3 mb-6">
                         <div className="flex flex-col items-center p-4 border border-stone-200 rounded-xl bg-stone-50">
                           <Bed className="w-6 h-6 mb-2 text-emerald-900" />
@@ -392,7 +385,6 @@ export default function Portfolio() {
                         </div>
                       </div>
                       
-                      {/* Price and CTA */}
                       <div className="flex justify-between items-center mb-4">
                         <span className="text-4xl font-extrabold text-emerald-900">
                           {project.price}
@@ -407,7 +399,7 @@ export default function Portfolio() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
 
         {/* Bottom Social Icons (Design maintained) */}
