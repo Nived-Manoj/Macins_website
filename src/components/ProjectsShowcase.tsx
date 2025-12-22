@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Building2, Calendar, CheckCircle2, Clock, MapPin, ArrowRight, ChevronLeft } from 'lucide-react';
-import RedCarpet from  "../assets/projects/RED CARPET STIL.png";
+// import Ellister from  "../assets/projects/12"
 import Fitout from "../assets/projects/project_fitout.jpeg"
 
 const ProjectsShowcase = () => {
@@ -11,7 +11,7 @@ const ProjectsShowcase = () => {
   const completedProjects = [
     { name: 'Mezdan Business center - Khalifa', scope: 'Office fitout', category: 'Office', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80' },
     { name: 'Emaar Residences', scope: 'Reception Lobby work', category: 'Residential', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80' },
-    { name: 'Louis vuitton -chalhoub group', scope: 'Cooperate office', category: 'Retail', image: Fitout },
+    { name: 'Louis vuitton -chalhoub group', scope: 'Cooperate office', category: 'Retail', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80' },
     { name: 'Life pharmacy al wasal', scope: 'Retail fitout', category: 'Retail', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80' },
     { name: 'Abudhabi Airport', scope: 'Retail fitout', category: 'Commercial', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80' },
     { name: 'Dubai Airport Terminal 3 - Emirates Lounge', scope: 'Renovation', category: 'Commercial', image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80' },
@@ -20,7 +20,7 @@ const ProjectsShowcase = () => {
     { name: 'Mumuso - Dubai mall', scope: 'Retail fitout', category: 'Retail', image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80' },
     { name: 'Yas island AUH - tryano', scope: 'Retail fitout', category: 'Retail', image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80' },
     { name: 'Marina Plaza Residence', scope: 'Reception cooridoors work', category: 'Residential', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80' },
-    { name: 'Redcarpet Showroom - Mall of Emirates', scope: 'Retail fitout', category: 'Retail', image: RedCarpet },
+    { name: 'Redcarpet Showroom - Mall of Emirates', scope: 'Retail fitout', category: 'Retail', image: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800&q=80' },
     { name: 'Molten Chocolat Café', scope: 'F&B fitout', category: 'F&B', image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80' },
     { name: 'Just Accessories', scope: 'Retail fitout', category: 'Retail', image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80' },
     { name: 'CuCa university Ajman - Class rooms', scope: 'Renovation fitout', category: 'Education', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80' },
