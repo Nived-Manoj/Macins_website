@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowUp, Youtube } from 'lucide-react';
 import WhiteLogo from "../assets/White.png";
 
 
@@ -39,29 +39,32 @@ export default function Footer() {
               transition: 'all 0.8s ease-out'
             }}
           >
-            <div className="flex items-center space-x-3 mb-4">
-               <img 
-      src={ WhiteLogo} 
-      alt="Logo" 
+            <div className="flex items-center space-x-3 mb-0"
+            style={{
+              height:"100px"
+            }}>
+              <img
+                src={WhiteLogo}
+                alt="Logo"
 
-      className="w-20 h-20 object-contain transition-all duration-300" 
-    />
-              <div className="text-2xl font-bold">
+                className="w-20 h-20 object-contain transition-all duration-300"
+              />
+              {/* <div className="text-2xl font-bold">
                 <span style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>MACINS GROUP</span>
-              </div>
+              </div> */}
             </div>
             <p className="text-[#d1fae5] mb-6 leading-relaxed">
               Building tomorrow's infrastructure today. Excellence across construction, energy, and technology sectors.
             </p>
             <div className="flex space-x-3">
-              <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
-                <Facebook size={20} />
+              <a href="https://youtube.com/@praveenpillai-entrepreneur?si=dU0-C3erRnQIqgSP" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
+                <Youtube size={20} />
               </a>
-              
-              <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
+
+              <a href="https://www.linkedin.com/in/praveen-pillai-95aa4419a/" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
+              <a href="https://www.instagram.com/praveen_macins?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Instagram size={20} />
               </a>
             </div>
@@ -78,31 +81,31 @@ export default function Footer() {
             <h4 className="text-xl font-bold mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#about" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
                   Services
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
                   Portfolio
                 </a>
               </li>
               <li>
-                <a href="#sustainability" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
                   Sustainability
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
                   Contact
                 </a>
@@ -123,31 +126,49 @@ export default function Footer() {
               <li>
                 <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
-                  Property Buying
+                  MEP Contracting
                 </a>
               </li>
               <li>
                 <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
-                  Property Selling
+                  Fit Out
                 </a>
               </li>
               <li>
                 <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
-                  Property Renting
+                  Energy Solutions
                 </a>
               </li>
               <li>
                 <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
-                  Investment Consulting
+                  EV Solutions
                 </a>
               </li>
               <li>
                 <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
                   <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
-                  Property Management
+                  Fabrication
+                </a>
+              </li>
+               <li>
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Real Estate
+                </a>
+              </li>
+               <li>
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  Civil Works
+                </a>
+              </li>
+               <li>
+                <a href="#" className="text-[#d1fae5] hover:text-[#fde68a] transition-all duration-300 flex items-center group">
+                  <span className="w-0 h-0.5 bg-[#fde68a] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                  BMS & Retrofit
                 </a>
               </li>
             </ul>

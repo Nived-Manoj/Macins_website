@@ -280,7 +280,7 @@ export default function Testimonials() {
             <Star size={16} className="fill-current" />
             <span>Testimonials</span>
           </div>
-          <h2 className="text-5xl lg:text-6xl font-bold text-[#064e3b] mb-4" style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>
+          <h2 className="text-5xl lg:text-6xl font-bold text-[#064e3b] mb-4">
             WHAT OUR CLIENTS SAY
           </h2>
           <p className="text-lg text-[#78716c] max-w-3xl mx-auto">

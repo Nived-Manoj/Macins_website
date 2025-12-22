@@ -127,7 +127,7 @@ export default function About() {
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-5xl lg:text-6xl font-bold text-[#064e3b] mb-4" style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>
+            <h2 className="text-5xl lg:text-6xl font-bold text-[#064e3b] mb-4">
               WHO WE ARE
             </h2>
             <p className="text-[#57534e] text-base leading-relaxed italic">
@@ -172,14 +172,14 @@ With expertise across construction, interior solutions, joinery, energy, and rea
               <h3 className="text-5xl font-bold text-[#064e3b] mb-2">950+</h3>
               <p className="text-[#78716c] text-lg">Global Customer</p>
             </div>
-            <div>
-              <h3 className="text-5xl font-bold text-[#064e3b] mb-2">1500+</h3>
-              <p className="text-[#78716c] text-lg">Project Finished</p>
-            </div>
-            <div>
-              <h3 className="text-5xl font-bold text-[#064e3b] mb-2">950+</h3>
-              <p className="text-[#78716c] text-lg">Global Customer</p>
-            </div>
+             <div>
+            <h3 className="text-5xl font-bold text-[#064e3b] mb-2">235+</h3>
+            <p className="text-[#78716c] text-lg">Ready Units</p>
+          </div>
+          <div>
+            <h3 className="text-5xl font-bold text-[#064e3b] mb-2">50M+</h3>
+            <p className="text-[#78716c] text-lg">Generating Income</p>
+          </div>
           </div>
 
           {/* Right side - Image */}

@@ -58,8 +58,9 @@ const ClientLogos = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-16 bg-white overflow-hidden"
+    style={{backgroundColor: "white"}}>
+      <div className=" mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">
             Trusted by Leading Companies
@@ -72,8 +73,8 @@ const ClientLogos = () => {
         {/* Scrolling container */}
         <div className="relative">
           {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-100 via-gray-100 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-white to-transparent z-10 pointer-events-none"></div>
 
           {/* Scrolling logos */}
           <div className="flex overflow-hidden">
@@ -86,6 +87,9 @@ const ClientLogos = () => {
                   <img
                     src={client.logo}
                     alt={client.name}
+                    style={{
+                      height: "100px"
+                    }}
                     className="h-16 w-auto object-contain transition-all duration-300 hover:scale-110"
                   />
                 </div>

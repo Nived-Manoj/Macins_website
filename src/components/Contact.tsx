@@ -164,12 +164,16 @@ export default function Contact() {
                       <label className={labelClass}>Service Required</label>
                       <select name="service" value={formData.service} onChange={handleChange} className={inputClass}>
                         <option value="" className='text-gray-500 bg-gray-800'>Select a service</option>
-                        <option value="buying">Buying Property</option>
-                        <option value="selling">Selling Property</option>
-                        <option value="renting">Renting Property</option>
-                        <option value="investment">Investment Consultation</option>
-                        <option value="property-management">Property Management</option>
-                        <option value="commercial">Commercial Real Estate</option>
+                        <option value="mepcontracting">MEP Contracting</option>
+                        <option value="fitout">Fit Out</option>
+                        <option value="energysolutions">Energy Solutions</option>
+                        <option value="evsolutions">EV Solutions</option>
+                        <option value="fabrication">Fabrication</option>
+                        <option value="realestate">Real Estate</option>
+
+                        <option value="civilworks">Civil Works</option>
+                                                <option value="bms&retrofit">BMS & Retrofit</option>
+
                       </select>
                     </div>
                   </div>

@@ -347,7 +347,7 @@ export default function Sustainability() {
           <Leaf size={16} />
           <span>Sustainability & Innovation</span>
         </div>
-        <h2 className="text-5xl lg:text-6xl font-bold text-[#064e3b] mb-6" style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>
+        <h2 className="text-5xl lg:text-6xl font-bold text-[#064e3b] mb-6">
           BUILDING A SUSTAINABLE FUTURE
         </h2>
         <p className="text-lg text-[#78716c] max-w-3xl mx-auto leading-relaxed">
