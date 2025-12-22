@@ -11,7 +11,7 @@ const ProjectsShowcase = () => {
   const completedProjects = [
     { name: 'Mezdan Business center - Khalifa', scope: 'Office fitout', category: 'Office', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80' },
     { name: 'Emaar Residences', scope: 'Reception Lobby work', category: 'Residential', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80' },
-    { name: 'Louis vuitton -chalhoub group', scope: 'Cooperate office', category: 'Retail', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80' },
+    { name: 'Louis vuitton -chalhoub group', scope: 'Cooperate office', category: 'Retail', image: Fitout },
     { name: 'Life pharmacy al wasal', scope: 'Retail fitout', category: 'Retail', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80' },
     { name: 'Abudhabi Airport', scope: 'Retail fitout', category: 'Commercial', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80' },
     { name: 'Dubai Airport Terminal 3 - Emirates Lounge', scope: 'Renovation', category: 'Commercial', image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80' },
