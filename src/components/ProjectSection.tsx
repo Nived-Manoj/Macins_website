@@ -97,34 +97,7 @@ const ProjectSection = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-            {/* Header */}
-            <header
-                className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-                style={{
-                    // opacity: isVisible ? 1 : 0,
-                    // transform: isVisible ? 'translateY(0)' : 'translateY(-100%)'
-                }}
-            >
-                <div
-                    className=" mt-0 rounded-3xl px-4 py-5 flex transition-all duration-300"
-                    style={{
-                        backgroundColor: 'white',
-                    }}
-                >
-                    <button
-                        onClick={() => (window.location.href = "/#services")}
-                        // onClick={() => navigate('/')}
-                        className="flex items-center gap-2 text-gray-700 hover:text-teal-600 transition-all duration-300 group"
-                    >
-                        <div className="p-2 rounded-full bg-gray-100 group-hover:bg-teal-50 transition-all">
-                            <ChevronLeft size={20} />
-                        </div>
-                        <span className="font-semibold">Back</span>
-                    </button>
-
-
-                </div>
-            </header>
+          
 
             <section className="py-16 sm:py-24 px-4">
                 <div className="max-w-7xl mx-auto text-center">

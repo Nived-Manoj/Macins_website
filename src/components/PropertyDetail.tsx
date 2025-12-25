@@ -53,37 +53,7 @@ export default function PropertyDetail() {
 
   return (
     <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 font-sans overflow-x-hidden">
-      {/* Floating Header */}
-      <header 
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(-100%)'
-        }}
-      >
-        <div 
-          className=" mt-0 rounded-3xl px-4 py-5 flex transition-all duration-300"
-          style={{
-            backgroundColor:  'white',
-            // marginLeft:"20px",
-            // width: "130px"
-            // backdropFilter: 'blur(20px)',
-            // boxShadow: scrollY > 50 ? '0 10px 40px rgba(0, 0, 0, 0.1)' : '0 4px 20px rgba(0, 0, 0, 0.05)'
-          }}
-        >
-          <button 
-            onClick={() => navigate('/')}
-            className="flex items-center gap-2 text-gray-700 hover:text-teal-600 transition-all duration-300 group"
-          >
-            <div className="p-2 rounded-full bg-gray-100 group-hover:bg-teal-50 transition-all">
-              <ChevronLeft size={20} />
-            </div>
-            <span className="font-semibold">Back</span>
-          </button>
-          
-          
-        </div>
-      </header>
+     
 
       {/* Hero Section with Parallax */}
       <div className="relative h-screen overflow-hidden">

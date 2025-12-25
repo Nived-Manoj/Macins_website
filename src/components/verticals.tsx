@@ -4,42 +4,16 @@ import ContactPopup from './ContactPopup';
 
 const Verticals = () => {
 
-          const [isPopupOpen, setIsPopupOpen] = useState(false);
-    
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
 
 
   return (
     <div className="min-h-screen bg-white">
-         <header
-                className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-                style={{
-                    // opacity: isVisible ? 1 : 0,
-                    // transform: isVisible ? 'translateY(0)' : 'translateY(-100%)'
-                }}
-            >
-                <div
-                    className=" mt-0 rounded-3xl px-4 py-5 flex transition-all duration-300"
-                    style={{
-                        backgroundColor: 'white',
-                    }}
-                >
-                    <button
-                        onClick={() => (window.location.href = "/#services")}
-                        // onClick={() => navigate('/')}
-                        className="flex items-center gap-2 text-gray-700 hover:text-teal-600 transition-all duration-300 group"
-                    >
-                        <div className="p-2 rounded-full bg-gray-100 group-hover:bg-teal-50 transition-all">
-                            <ChevronLeft size={20} />
-                        </div>
-                        <span className="font-semibold">Back</span>
-                    </button>
 
-
-                </div>
-            </header>
       {/* Hero Section */}
-       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg)',
@@ -48,14 +22,14 @@ const Verticals = () => {
         />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="text-6xl md:text-7xl font-bold mb-6">            Expanding Horizons, Delivering Excellence
-</h1>
+          </h1>
           {/* <p className="text-2xl md:text-3xl mb-4">Building Tomorrow, Today</p> */}
           <p className="text-lg md:text-xl opacity-90">
-Macins Group of Companies operates across multiple verticals, each backed by deep industry knowledge, 
+            Macins Group of Companies operates across multiple verticals, each backed by deep industry knowledge,
             cutting-edge solutions, and a commitment to client success. Explore our diverse business divisions.          </p>
         </div>
       </section>
-    
+
 
       {/* Intro Section */}
       <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
@@ -64,7 +38,7 @@ Macins Group of Companies operates across multiple verticals, each backed by dee
             Expanding Horizons, Delivering Excellence
           </h2>
           <p className="text-xl text-gray-700 leading-relaxed">
-            Macins Group of Companies operates across multiple verticals, each backed by deep industry knowledge, 
+            Macins Group of Companies operates across multiple verticals, each backed by deep industry knowledge,
             cutting-edge solutions, and a commitment to client success. Explore our diverse business divisions.
           </p>
         </div>
@@ -93,16 +67,16 @@ Macins Group of Companies operates across multiple verticals, each backed by dee
                   </div>
                 ))}
               </div>
-              <a 
-            
-              href='https://macinsluxe.com/'
-              className="group flex items-center space-x-2 px-8 py-4 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300" style={{ backgroundColor: '#059669', width: "180px" }}>
+              <a
+
+                href='https://macinsluxe.com/'
+                className="group flex items-center space-x-2 px-8 py-4 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300" style={{ backgroundColor: '#059669', width: "180px" }}>
                 <span>Learn More</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <img 
+              <img
                 src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg"
                 alt="Real Estate"
                 className="w-full h-full object-cover"
@@ -118,7 +92,7 @@ Macins Group of Companies operates across multiple verticals, each backed by dee
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 md:order-1">
-              <img 
+              <img
                 src="https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg"
                 alt="Healthcare"
                 className="w-full h-full object-cover"
@@ -157,10 +131,10 @@ Macins Group of Companies operates across multiple verticals, each backed by dee
                   </div>
                 ))}
               </div>
-              <a 
-              href='https://www.amhealthhub.com/'
-              className="group flex items-center space-x-2 px-8 py-4 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300" 
-              style={{ backgroundColor: '#059669', width: "180px" }}>
+              <a
+                href='https://www.amhealthhub.com/'
+                className="group flex items-center space-x-2 px-8 py-4 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300"
+                style={{ backgroundColor: '#059669', width: "180px" }}>
                 <span>Learn More</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -202,16 +176,16 @@ Macins Group of Companies operates across multiple verticals, each backed by dee
                   </div>
                 ))}
               </div>
-              <a 
-              href='https://designfuture.store/'
-              className="group flex items-center space-x-2 px-8 py-4 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300" 
-              style={{ backgroundColor: '#059669', width: "220px" }}>
+              <a
+                href='https://designfuture.store/'
+                className="group flex items-center space-x-2 px-8 py-4 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300"
+                style={{ backgroundColor: '#059669', width: "220px" }}>
                 <span>View Our Process</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <img 
+              <img
                 src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg"
                 alt="Interior Design"
                 className="w-full h-full object-cover"
@@ -227,7 +201,7 @@ Macins Group of Companies operates across multiple verticals, each backed by dee
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 md:order-1">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80"
                 alt="Portfolio"
                 className="w-full h-full object-cover"
@@ -253,10 +227,10 @@ Macins Group of Companies operates across multiple verticals, each backed by dee
                   </div>
                 ))}
               </div>
-              <a 
-              href='https://checkpointservices.store/'
-              className="group flex items-center space-x-2 px-8 py-4 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300" 
-              style={{ backgroundColor: '#059669', width: "230px" }}>
+              <a
+                href='https://checkpointservices.store/'
+                className="group flex items-center space-x-2 px-8 py-4 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300"
+                style={{ backgroundColor: '#059669', width: "230px" }}>
                 <span>View Our Portfolio</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -271,19 +245,19 @@ Macins Group of Companies operates across multiple verticals, each backed by dee
           <Globe2 className="w-16 h-16 mx-auto mb-6" />
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Whether you need real estate services, healthcare solutions, interior design, or project management, 
+            Whether you need real estate services, healthcare solutions, interior design, or project management,
             our expert teams are ready to deliver excellence tailored to your needs.
           </p>
-          <button 
-                         onClick={() => setIsPopupOpen(true)}
+          <button
+            onClick={() => setIsPopupOpen(true)}
 
-          className="px-10 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+            className="px-10 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
             Contact Us Today
           </button>
         </div>
       </section>
 
-                  <ContactPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <ContactPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
     </div>
   );
