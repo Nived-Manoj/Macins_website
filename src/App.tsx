@@ -24,6 +24,10 @@ import CivilWorksPage from './components/CivilWorksPage';
 import ThankYouScreen from './components/ThankYouScreen';
 import ProjectSection from './components/ProjectSection';
 import ClientLogos from './components/ClientLogs';
+import AboutUs from './components/AboutUsPage';
+import Verticals from './components/verticals';
+import NewsPage from './components/NewsPage';
+import BlogsPage from './components/BlogsPage';
 
 // Create a HomePage component with all your sections
 function HomePage() {
@@ -36,7 +40,7 @@ function HomePage() {
       <Portfolio />
       <ClientLogos/>
       <Sustainability />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact />
     </>
   );
@@ -64,6 +68,13 @@ function Layout() {
         <Route path="/realestate" element={<MacinsRealEstate />} />
         <Route path="/civilworks" element={<CivilWorksPage />} />
         <Route path="/projectsection" element={<ProjectSection />} />
+         <Route path="/aboutsection" element={<AboutUs />} />
+
+         <Route path="/newspage" element={<NewsPage />} />
+
+         <Route path="/blogs" element={<BlogsPage />} />
+
+         <Route path="/verticalsection" element={<Verticals />} />
         <Route path="/thankyou" element={<ThankYouScreen
           onGoHome={() => window.location.href = '/'}
           whatsappNumber="+971554560554"

@@ -57,14 +57,14 @@ export default function Footer() {
               Building tomorrow's infrastructure today. Excellence across construction, energy, and technology sectors.
             </p>
             <div className="flex space-x-3">
-              <a href="https://youtube.com/@praveenpillai-entrepreneur?si=dU0-C3erRnQIqgSP" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
+              {/* <a href="https://youtube.com/@praveenpillai-entrepreneur?si=dU0-C3erRnQIqgSP" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Youtube size={20} />
-              </a>
+              </a> */}
 
-              <a href="https://www.linkedin.com/in/praveen-pillai-95aa4419a/" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
+              <a href="https://www.linkedin.com/company/macins-contracting-llc/" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Linkedin size={20} />
               </a>
-              <a href="https://www.instagram.com/praveen_macins?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
+              <a href="https://www.instagram.com/macins_groupofcompanies?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-[#10b981] transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                 <Instagram size={20} />
               </a>
             </div>
@@ -202,6 +202,9 @@ export default function Footer() {
                 </div>
                 <a href="tel:+971554560554" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
                   +971 55 456 0554
+                </a>
+                <a href="" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
+                  +971 43 48 6576
                 </a>
               </li>
               <li className="flex items-center space-x-3 group">

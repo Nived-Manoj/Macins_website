@@ -22,50 +22,49 @@ import TransGit from "../assets/clients/transgilf.jfif";
 import VoxCinesa from "../assets/clients/voxCineas.png";
 import WorldScruity from "../assets/clients/worldScurity.jfif";
 
-
 const ClientLogos = () => {
-  // Sample client logos - replace with your actual logo URLs
- // Sample client logos - replace with your actual logo URLs
   const clients = [
-    { name: 'Client 1', logo: Abudhabi },
-    { name: 'Client 2', logo: Dubai },
-    { name: 'Client 3', logo: Alain },
-    { name: 'Client 4', logo: Appareal },
-    { name: 'Client 5', logo: Aried },
-    { name: 'Client 6', logo: Bab },
-    { name: 'Client 7', logo: CityUniversity },
-    { name: 'Client 8', logo: DpWoris },
-     { name: 'Client 1', logo: Emaar },
-    { name: 'Client 2', logo: Enova },
-    { name: 'Client 3', logo: Global },
-    { name: 'Client 4', logo: Image },
-    { name: 'Client 5', logo: IslamicAffairs },
-    { name: 'Client 6', logo: Khidma },
-    { name: 'Client 7', logo: MajidFuttai },
-    { name: 'Client 8', logo: inistry },
-    { name: 'Client 8', logo: Provis },  
-      { name: 'Client 8', logo: ShuaaEnergy },
-          { name: 'Client 8', logo: Tesla },
-              { name: 'Client 8', logo: TransGit },
-                  { name: 'Client 8', logo: VoxCinesa },
-                      { name: 'Client 8', logo: WorldScruity },
+    { name: 'Abu Dhabi', logo: Abudhabi },
+    { name: 'Dubai', logo: Dubai },
+    { name: 'Al Ain', logo: Alain },
+    { name: 'Appareal', logo: Appareal },
+    { name: 'Aries', logo: Aried },
+    { name: 'BAB', logo: Bab },
+    { name: 'City University', logo: CityUniversity },
+    { name: 'DP World', logo: DpWoris },
+    { name: 'Emaar', logo: Emaar },
+    { name: 'Enova', logo: Enova },
+    { name: 'Global', logo: Global },
+    { name: 'Client', logo: Image },
+    { name: 'Islamic Affairs', logo: IslamicAffairs },
+    { name: 'Khidma', logo: Khidma },
+    { name: 'Majid Futtaim', logo: MajidFuttai },
+    { name: 'Ministry', logo: inistry },
+    { name: 'Provis', logo: Provis },
+    { name: 'Shuaa Energy', logo: ShuaaEnergy },
+    { name: 'Tesla', logo: Tesla },
+    { name: 'Trans Gulf', logo: TransGit },
+    { name: 'VOX Cinemas', logo: VoxCinesa },
+    { name: 'World Security', logo: WorldScruity },
+        { name: 'World Security', logo: "https://img1.wsimg.com/isteam/ip/9e4a5c06-f47b-488e-a820-94cfc3f8cda0/Elister%20med.png/:/rs=w:179,h:100,cg:true,m/cr=w:179,h:100" },
 
-
-
-
-
+    { name: 'Acciona', logo: "https://img1.wsimg.com/isteam/ip/9e4a5c06-f47b-488e-a820-94cfc3f8cda0/Acciona_Logo.jpg/:/rs=w:267,h:100,cg:true,m/cr=w:267,h:100/qt=q:25" },
+    { name: 'Lipton', logo: "https://img1.wsimg.com/isteam/ip/9e4a5c06-f47b-488e-a820-94cfc3f8cda0/Lipton%20teas%20and%20Infusions.png/:/rs=w:100,h:100,cg:true,m/cr=w:100,h:100/qt=q:25" },
+    { name: 'Mall of the Emirates', logo: "https://img1.wsimg.com/isteam/ip/9e4a5c06-f47b-488e-a820-94cfc3f8cda0/mall%20of%20the%20emirates.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:180,h:100,cg:true/qt=q:25" },
+    { name: 'PVH', logo: "https://img1.wsimg.com/isteam/ip/9e4a5c06-f47b-488e-a820-94cfc3f8cda0/pvh%20logo.png/:/rs=w:206,h:100,cg:true,m/cr=w:206,h:100/qt=q:25" },
+    { name: 'World Security', logo: "https://img1.wsimg.com/isteam/ip/9e4a5c06-f47b-488e-a820-94cfc3f8cda0/grs%20logo%201.png/:/rs=w:100,h:100,cg:true,m/cr=w:100,h:100/qt=q:25" },
+    { name: 'World Security', logo: "https://img1.wsimg.com/isteam/ip/9e4a5c06-f47b-488e-a820-94cfc3f8cda0/lulu-group-international-logo-vector%20(2).webp/:/rs=w:180,h:100,cg:true,m/cr=w:180,h:100/qt=q:25" },
 
   ];
 
   return (
-    <section className="py-16 bg-white overflow-hidden"
-    style={{backgroundColor: "white"}}>
-      <div className=" mx-auto px-4">
+    <section className="py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <div className="mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-4xl font-bold text-gray-900 mb-3">
             Trusted by Leading Companies
           </h2>
-          <p className="text-gray-600">
+          <p className="text-lg text-gray-600">
             Join hundreds of satisfied clients worldwide
           </p>
         </div>
@@ -73,43 +72,50 @@ const ClientLogos = () => {
         {/* Scrolling container */}
         <div className="relative">
           {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-white to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-white to-transparent z-10 pointer-events-none"></div>
+          {/* <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 via-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white to-transparent z-10 pointer-events-none"></div> */}
 
-          {/* Scrolling logos */}
-          <div className="flex overflow-hidden">
-            <div className="flex animate-scroll">
-              {clients.map((client, index) => (
-                <div
-                  key={`original-${index}`}
-                  className="flex-shrink-0 mx-8 flex items-center justify-center"
-                >
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    style={{
-                      height: "100px"
-                    }}
-                    className="h-16 w-auto object-contain transition-all duration-300 hover:scale-110"
-                  />
-                </div>
-              ))}
+          {/* Scrolling track */}
+          <div className="flex">
+            <div className="flex animate-scroll-container">
+              {/* First set of logos */}
+              <div className="flex">
+                {clients.map((client, index) => (
+                  <div
+                    key={`first-${index}`}
+                    className="flex-shrink-0 mx-8 flex items-center justify-center w-40 h-24"
+                  >
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      style={{
+                        height: "150px"
+                      }}
+                      className="max-w-full max-h-full object-contain hover:opacity-100 transition-all duration-300 filter drop-shadow-sm"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Duplicate set for seamless loop */}
+              <div className="flex" aria-hidden="true">
+                {clients.map((client, index) => (
+                  <div
+                    key={`second-${index}`}
+                    className="flex-shrink-0 mx-8 flex items-center justify-center w-40 h-24"
+                  >
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      style={{
+                        height: "150px"
+                      }}
+                      className="max-w-full max-h-full object-contain hover:opacity-100 transition-all duration-300 filter drop-shadow-sm"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-            {/* Duplicate for seamless loop */}
-            {/* <div className="flex animate-scroll">
-              {clients.map((client, index) => (
-                <div
-                  key={`duplicate-${index}`}
-                  className="flex-shrink-0 mx-8 flex items-center justify-center"
-                >
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="h-16 w-auto object-contain transition-all duration-300 hover:scale-110"
-                  />
-                </div>
-              ))}
-            </div> */}
           </div>
         </div>
       </div>
@@ -120,15 +126,15 @@ const ClientLogos = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
           }
         }
 
-        .animate-scroll {
-          animation: scroll 25s linear infinite;
+        .animate-scroll-container {
+          animation: scroll 60s linear infinite;
         }
 
-        .animate-scroll:hover {
+        .animate-scroll-container:hover {
           animation-play-state: paused;
         }
       `}</style>

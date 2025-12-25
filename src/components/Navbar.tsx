@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Menu, X, Phone, ChevronRight } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import WhiteLogo from "../assets/White.png";
 import DarkLogo from "../assets/Black.png";
 
@@ -9,204 +9,199 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio', isRoute: true, route: '/projectsection' },
-    { name: 'Sustainability', href: '#sustainability' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Home", scrollTo: "home" },
+    { name: "About", scrollTo: "about" },
+    { name: "Services", scrollTo: "services" },
+    { name: "Portfolio", route: "/projectsection" },
+    { name: "Verticals", route: "/verticalsection" },
+
+    { name: "News", route: "/newspage" },
+        { name: "Blogs", route: "/blogs" },
+
+    { name: "Contact", scrollTo: "contact" },
   ];
 
+  const handleNavigation = (link) => {
+    if (link.route) {
+      navigate(link.route);
+    } else if (link.scrollTo) {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          document
+            .getElementById(link.scrollTo)
+            ?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      } else {
+        document
+          .getElementById(link.scrollTo)
+          ?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-2xl py-0' 
-          : 'bg-gradient-to-b from-[#064e3b]/90 to-transparent backdrop-blur-sm py-0'
-      }`}
-    >
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between">
+    <>
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white shadow-md"
+            : "bg-gradient-to-b from-[#064e3b]/90 to-transparent"
+        }`}
+      >
+        <div className="container mx-auto px-6 flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-  <div className="w-20 h-20 flex items-center justify-center transition-all duration-300">
-    <img 
-      src={isScrolled ? DarkLogo : WhiteLogo} 
-      alt="Logo" 
+          <img
+            src={isScrolled ? DarkLogo : WhiteLogo}
+            alt="Logo"
+            className="h-14 cursor-pointer"
+            style={{
+              height: "100px"
+            }}
+            onClick={() => navigate("/")}
+          />
 
-      className="w-full h-full object-contain transition-all duration-300" 
-    />
-  </div>
-  <div className={`text-2xl font-bold transition-all duration-300 ${
-    isScrolled ? 'text-[#064e3b]' : 'text-white'
-  }`}>
-    {/* <span style={{ fontFamily: 'Impact, sans-serif', letterSpacing: '1px' }}>Macins Group</span> */}
-  </div>
-</div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex gap-6">
             {navLinks.map((link) => (
-              link.isRoute ? (
-                <button
-                  key={link.name}
-                  onClick={() => navigate(link.route)}
-                  className={`px-5 py-2 font-semibold transition-all duration-300 relative group rounded-lg ${
-                    isScrolled 
-                      ? 'text-[#57534e] hover:text-[#059669] hover:bg-[#f0fdf4]' 
-                      : 'text-white/90 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  {link.name}
-                  <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 group-hover:w-3/4 transition-all duration-300 ${
-                    isScrolled ? 'bg-[#059669]' : 'bg-white'
-                  }`}></span>
-                </button>
-              ) : (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`px-5 py-2 font-semibold transition-all duration-300 relative group rounded-lg ${
-                    isScrolled 
-                      ? 'text-[#57534e] hover:text-[#059669] hover:bg-[#f0fdf4]' 
-                      : 'text-white/90 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  {link.name}
-                  <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 group-hover:w-3/4 transition-all duration-300 ${
-                    isScrolled ? 'bg-[#059669]' : 'bg-white'
-                  }`}></span>
-                </a>
-              )
+              <button
+                key={link.name}
+                onClick={() => handleNavigation(link)}
+                className={`font-semibold transition ${
+                  isScrolled
+                    ? "text-gray-700 hover:text-green-600"
+                    : "text-white hover:text-green-300"
+                }`}
+              >
+                {link.name}
+              </button>
             ))}
           </div>
-           
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-3">
+          {/* CTA */}
+          <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+97123123456"
-              className={`group flex items-center space-x-2 px-5 py-2.5 rounded-xl transition-all duration-300 font-semibold ${
-                isScrolled
-                  ? 'text-[#059669] hover:bg-[#f0fdf4]'
-                  : 'text-white/90 hover:bg-white/10'
+              href="tel:+971554560554"
+              className={`flex items-center gap-2 ${
+                isScrolled ? "text-green-600" : "text-white"
               }`}
             >
-              <Phone size={18} className="group-hover:rotate-12 transition-transform duration-300" />
-              <span className="text-sm">(971) 55 456 0554</span>
+              <Phone size={18} /> (971) 55 456 0554
             </a>
             <a
               href="#contact"
-              className={`px-6 py-2.5 rounded-xl transition-all duration-300 font-bold shadow-lg transform hover:scale-105 ${
-                isScrolled
-                  ? 'bg-[#059669] text-white hover:bg-[#064e3b] hover:shadow-xl'
-                  : 'bg-white text-[#064e3b] hover:bg-[#f0fdf4] hover:shadow-2xl'
-              }`}
+              className="flex items-center justify-center px-6 py-3 bg-[#059669] text-white rounded-xl font-bold hover:bg-[#064e3b] transition-all duration-300 shadow-lg"
             >
-              Get Started
+              Get in Touch
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 rounded-lg transition-all duration-300 ${
-              isScrolled 
-                ? 'text-[#064e3b] hover:bg-[#f0fdf4]' 
-                : 'text-white hover:bg-white/10'
+            className={`lg:hidden z-50 transition-colors ${
+              isMobileMenuOpen 
+                ? "text-white" 
+                : isScrolled 
+                ? "text-gray-900" 
+                : "text-white"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div 
-            className={`lg:hidden mt-6 rounded-2xl overflow-hidden transition-all duration-300 ${
-              isScrolled ? 'bg-white shadow-2xl' : 'bg-white/95 backdrop-blur-lg shadow-2xl'
-            }`}
-            style={{
-              animation: 'slideDown 0.3s ease-out'
-            }}
-          >
-            <div className="p-6 space-y-2">
-              {navLinks.map((link, index) => (
-                link.isRoute ? (
-                  <button
-                    key={link.name}
-                    onClick={() => {
-                      navigate(link.route);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="block w-full text-left px-4 py-3 text-[#064e3b] font-semibold rounded-xl hover:bg-[#f0fdf4] hover:text-[#059669] transition-all duration-300 hover:translate-x-2"
-                    style={{
-                      animation: `fadeInLeft 0.3s ease-out ${index * 0.1}s both`
-                    }}
-                  >
-                    {link.name}
-                  </button>
-                ) : (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="block px-4 py-3 text-[#064e3b] font-semibold rounded-xl hover:bg-[#f0fdf4] hover:text-[#059669] transition-all duration-300 hover:translate-x-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    style={{
-                      animation: `fadeInLeft 0.3s ease-out ${index * 0.1}s both`
-                    }}
-                  >
-                    {link.name}
-                  </a>
-                )
-              ))}
-            </div>
-            
-            <div className="px-6 pb-6 space-y-3">
-              <a
-                href="tel:+97123123456"
-                className="flex items-center justify-center space-x-2 px-6 py-3 bg-[#f0fdf4] text-[#059669] rounded-xl font-semibold hover:bg-[#059669] hover:text-white transition-all duration-300 shadow-md"
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300 ${
+          isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Menu Sidebar */}
+      <div
+        className={`fixed top-0 right-0 h-full w-80 bg-gradient-to-br from-[#059669] to-[#064e3b] z-40 lg:hidden transform transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col h-full pt-24 pb-8 px-6">
+          {/* Menu Items */}
+          <div className="flex-1 space-y-2">
+            {navLinks.map((link, index) => (
+              <button
+                key={link.name}
+                onClick={() => handleNavigation(link)}
+                className="group w-full flex items-center justify-between px-6 py-4 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300"
+                style={{
+                  animation: isMobileMenuOpen
+                    ? `slideIn 0.3s ease-out ${index * 0.05}s both`
+                    : "none",
+                }}
               >
-                <Phone size={18} />
-                <span>(971) 55 456 0554</span>
-              </a>
-              <a
-                href="#contact"
-                className="flex items-center justify-center px-6 py-3 bg-[#059669] text-white rounded-xl font-bold hover:bg-[#064e3b] transition-all duration-300 shadow-lg"
-              >
-                Get Started
-              </a>
-            </div>
+                <span className="text-lg">{link.name}</span>
+                <ChevronRight
+                  size={20}
+                  className="opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all"
+                />
+              </button>
+            ))}
           </div>
-        )}
+
+          {/* Contact Info */}
+          <div className="space-y-4 border-t border-white/20 pt-6">
+            <a
+              href="tel:+971554560554"
+              className="flex items-center gap-3 text-white hover:text-green-200 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                <Phone size={18} />
+              </div>
+              <div>
+                <div className="text-xs opacity-70">Call Us</div>
+                <div className="font-semibold">(971) 55 456 0554</div>
+              </div>
+            </a>
+
+            <a
+              href="#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block w-full text-center px-6 py-4 bg-white text-[#059669] rounded-xl font-bold hover:shadow-2xl transition-all duration-300"
+            >
+              Get in Touch
+            </a>
+          </div>
+        </div>
       </div>
 
       <style>{`
-        @keyframes slideDown {
+        @keyframes slideIn {
           from {
             opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
+            transform: translateX(20px);
           }
           to {
             opacity: 1;
@@ -214,6 +209,6 @@ export default function Navbar() {
           }
         }
       `}</style>
-    </nav>
+    </>
   );
 }

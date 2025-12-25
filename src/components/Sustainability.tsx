@@ -391,70 +391,7 @@ export default function Sustainability() {
           ))}
         </div>
 
-        {/* --- Main Dark Section (mimicking the bottom half of the image) --- */}
-        <div
-          className="bg-[#064e3b] text-white rounded-3xl p-10 lg:p-16 shadow-2xl"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'all 1s ease-out 0.6s'
-          }}
-        >
-          <h2 className="text-3xl lg:text-4xl font-extrabold mb-10 tracking-wider">
-            {mainSectionData.title}
-          </h2>
-
-          <div className="flex flex-col lg:flex-row gap-10 items-center">
-            {/* Left: Large Placeholder Image/Card */}
-           <div className="w-full lg:w-1/2 h-80 rounded-2xl overflow-hidden relative shadow-lg">
-  {/* Image Placeholder */}
-  <div
-    className="w-full h-full"
-    style={{
-      // Use a new image URL that aligns with the modern, luxurious, and eco-friendly theme
-      // Increased the black gradient opacity for better text contrast, matching the image.
-      backgroundImage: 'linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(https://images.pexels.com/photos/1114875/pexels-photo-1114875.jpeg)', 
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
-    }}
-  >
-    {/* Optional Text Overlay */}
-    <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">
-      <span className="bg-green-700/80 px-3 py-1 rounded-md">LEED Certified</span>
-    </div>
-  </div>
-</div>
-
-            {/* Right: Content and Button */}
-            <div className="w-full lg:w-1/2">
-              <h3 className="text-3xl font-bold mb-4">
-                {mainSectionData.cardTitle}
-              </h3>
-              <p className="text-gray-400 mb-8 leading-relaxed">
-                {mainSectionData.description}
-              </p>
-
-              {/* Stat/Icon Row */}
-              <div className="flex items-center space-x-3 mb-8">
-                <mainSectionData.icon className="text-green-400" size={32} />
-                <div className="text-xl font-bold text-green-400">{mainSectionData.stat}</div>
-                <div className="text-sm text-gray-500">({mainSectionData.statLabel})</div>
-              </div>
-
-              {/* Button matching the image style */}
-              {/* <button className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-white hover:text-black">
-                {mainSectionData.buttonText}
-              </button> */}
-            </div>
-          </div>
-
-          {/* Faint 'DREAM HOME' text in background (mimicking the image) */}
-          <div className="absolute inset-0 flex items-end justify-start opacity-5 pointer-events-none">
-            <h1 className="text-[200px] font-extrabold select-none leading-none -ml-4 -mb-10" style={{ fontFamily: 'Impact, sans-serif' }}>
-              MACINS GROUP
-            </h1>
-          </div>
-        </div>
+      
       </div>
     </section>
   );

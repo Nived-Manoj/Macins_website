@@ -78,21 +78,21 @@ export default function FounderSection() {
                 <h4 className="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-4">Connect</h4>
                 <div className="flex gap-4">
                   <a 
-                    href={founder.social.linkedin}
+                    href="https://www.linkedin.com/in/praveen-pillai-95aa4419a/"
                     className="flex items-center justify-center w-12 h-12 bg-slate-100 hover:bg-emerald-600 text-slate-600 hover:text-white rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                     aria-label="LinkedIn"
                   >
                     <Linkedin size={20} />
                   </a>
                   <a 
-                    href={founder.social.twitter}
+                    href="https://www.instagram.com/praveen_macins?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                     className="flex items-center justify-center w-12 h-12 bg-slate-100 hover:bg-emerald-600 text-slate-600 hover:text-white rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                     aria-label="Twitter"
                   >
                     <Instagram size={20} />
                   </a>
                   <a 
-                    href={`mailto:${founder.social.email}`}
+                    href="https://www.youtube.com/@praveenpillai-entrepreneur?si=dU0-C3erRnQIqgSP"
                     className="flex items-center justify-center w-12 h-12 bg-slate-100 hover:bg-emerald-600 text-slate-600 hover:text-white rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                     aria-label="Email"
                   >
