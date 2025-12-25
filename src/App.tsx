@@ -69,13 +69,10 @@ function Layout() {
         <Route path="/civilworks" element={<CivilWorksPage />} />
         <Route path="/projectsection" element={<ProjectSection />} />
          <Route path="/aboutsection" element={<AboutUs />} />
-
          <Route path="/newspage" element={<NewsPage />} />
-
          <Route path="/blogs" element={<BlogsPage />} />
-
          <Route path="/verticalsection" element={<Verticals />} />
-        <Route path="/thankyou" element={<ThankYouScreen
+         <Route path="/thankyou" element={<ThankYouScreen
           onGoHome={() => window.location.href = '/'}
           whatsappNumber="+971554560554"
         />} />
