@@ -26,7 +26,7 @@ export default function About() {
             </h2>
 
 
-            <p className="text-[#57534e] text-base leading-relaxed italic">
+            <p className="text-[#57534e] text-base leading-relaxed">
               Founded in 2014 and headquartered in Dubai, Macins Group is a leading provider of integrated solutions across technology, construction, energy, and logistics. Operating across the UAE, India, Kingdom of Saudi Arabia, and Qatar, we bring global standards, regional expertise, and a relentless commitment to excellence for every engagement.            </p>
             <p className="text-[#57534e] text-base leading-relaxed">
               Macins Group was founded on the belief that infrastructure should inspire progress. From our beginnings as a contracting company, we have expanded into a diversified group that builds smarter, greener, and more responsible environments.
