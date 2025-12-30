@@ -202,14 +202,27 @@ export default function Footer() {
                 </div>
                 <a
                 style={{
-                  fontSize: "14px"
+                  fontSize: "15px"
                 }}
                  href="tel:+971554560554" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
                   +971 55 456 0554
                 </a>
+                {/* <a 
+                 style={{
+                  fontSize: "13px"
+                }}
+                href="" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
+                  +971 43 48 6576, Extension no: 104
+                </a> */}
+              </li>
+               <li className="flex items-center space-x-3 group">
+                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#10b981] transition-all duration-300">
+                  <Phone size={20} className="text-[#10b981] group-hover:text-white transition-colors duration-300" />
+                </div>
+                
                 <a 
                  style={{
-                  fontSize: "14px"
+                  fontSize: "15px"
                 }}
                 href="" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
                   +971 43 48 6576, Extension no: 104
