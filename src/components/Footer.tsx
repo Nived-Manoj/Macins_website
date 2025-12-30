@@ -212,7 +212,7 @@ export default function Footer() {
                   fontSize: "14px"
                 }}
                 href="" className="text-[#d1fae5] hover:text-[#fde68a] transition-colors duration-300">
-                  +971 43 48 6576, Ext(104)
+                  +971 43 48 6576, Extension no: 104
                 </a>
               </li>
               <li className="flex items-center space-x-3 group">
