@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Building, Heart, Pencil, Shield, ArrowRight, Globe2, Users, Award, ChevronLeft } from 'lucide-react';
 import ContactPopup from './ContactPopup';
+import video1 from "../assets/home_video2.mp4";
+
 
 const Verticals = () => {
 
@@ -13,20 +15,28 @@ const Verticals = () => {
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
+        <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video1}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+        {/* <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg)',
             filter: 'brightness(0.4)'
           }}
-        />
+        /> */}
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6">            Expanding Horizons, Delivering Excellence
-          </h1>
+          {/* <h1 className="text-6xl md:text-7xl font-bold mb-6">            Expanding Horizons, Delivering Excellence */}
+          {/* </h1> */}
           {/* <p className="text-2xl md:text-3xl mb-4">Building Tomorrow, Today</p> */}
-          <p className="text-lg md:text-xl opacity-90">
+          {/* <p className="text-lg md:text-xl opacity-90">
             Macins Group of Companies operates across multiple verticals, each backed by deep industry knowledge,
-            cutting-edge solutions, and a commitment to client success. Explore our diverse business divisions.          </p>
+            cutting-edge solutions, and a commitment to client success. Explore our diverse business divisions.          </p> */}
         </div>
       </section>
 

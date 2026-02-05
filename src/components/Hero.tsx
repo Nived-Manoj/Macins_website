@@ -9,7 +9,7 @@ export default function Hero() {
       const [isPopupOpen, setIsPopupOpen] = useState(false);
   
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-stone-50 to-amber-50">
+    <section id="home" >
 {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
