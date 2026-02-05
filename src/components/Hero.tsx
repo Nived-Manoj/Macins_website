@@ -3,13 +3,22 @@
 import { ArrowRight, Phone } from 'lucide-react';
 import { useState } from 'react';
 import ContactPopup from './ContactPopup';
+import video1 from "../assets/home_video1.mp4";
 
 export default function Hero() {
       const [isPopupOpen, setIsPopupOpen] = useState(false);
   
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-stone-50 to-amber-50">
-      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/4792509/pexels-photo-4792509.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-10"></div>
+{/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video1}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/70 via-stone-50/50 to-transparent"></div>
 
@@ -48,7 +57,7 @@ export default function Hero() {
           </div>
 
           <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 border-4 border-white">
                   <img
@@ -67,11 +76,11 @@ export default function Hero() {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Decorative organic shapes */}
-            <div className="absolute -top-8 -right-8 w-32 h-32 bg-emerald-300 rounded-full opacity-20 blur-3xl"></div>
-            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-amber-300 rounded-full opacity-20 blur-3xl"></div>
+            {/* <div className="absolute -top-8 -right-8 w-32 h-32 bg-emerald-300 rounded-full opacity-20 blur-3xl"></div>
+            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-amber-300 rounded-full opacity-20 blur-3xl"></div> */}
           </div>
         </div>
       </div>
