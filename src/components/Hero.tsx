@@ -3,7 +3,7 @@
 import { ArrowRight, Phone } from 'lucide-react';
 import { useState } from 'react';
 import ContactPopup from './ContactPopup';
-import video1 from "../assets/home_video1.mp4";
+import video1 from "../assets/home_video2.mp4";
 
 export default function Hero() {
       const [isPopupOpen, setIsPopupOpen] = useState(false);

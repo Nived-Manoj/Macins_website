@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Building, Heart, Pencil, Shield, ArrowRight, Globe2, Users, Award, ChevronLeft } from 'lucide-react';
 import ContactPopup from './ContactPopup';
-import video1 from "../assets/home_video2.mp4";
+import video1 from "../assets/home_video1.mp4";
 
 
 const Verticals = () => {
