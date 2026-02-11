@@ -5,10 +5,9 @@ import { X, Mail, Phone, MessageSquare, User, ArrowRight, Loader2, CheckCircle, 
 import { useNavigate } from 'react-router-dom';
 
 // Replace these placeholders with your actual EmailJS IDs
-
-  const SERVICE_ID = 'service_luw286n'; 
-const TEMPLATE_ID = 'template_mwx7j7h'; 
-const PUBLIC_KEY = 'kfC6202TCJEQwSZ1k';// This is your User ID
+const SERVICE_ID = 'service_pe25bht'; 
+const TEMPLATE_ID = 'template_epksvwd'; 
+const PUBLIC_KEY = '7kOAUycVULgdukvVp';
 
 // Reusable Popup Component
 export default function ContactPopup({ isOpen, onClose }) {

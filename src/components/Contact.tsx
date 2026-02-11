@@ -3,9 +3,9 @@ import { MapPin, Phone, Mail, Send, Check, X } from 'lucide-react';
 import emailjs from '@emailjs/browser'; 
 import { useNavigate } from 'react-router-dom';
 
-const SERVICE_ID = 'service_luw286n'; 
-const TEMPLATE_ID = 'template_mwx7j7h'; 
-const PUBLIC_KEY = 'kfC6202TCJEQwSZ1k';
+const SERVICE_ID = 'service_pe25bht'; 
+const TEMPLATE_ID = 'template_epksvwd'; 
+const PUBLIC_KEY = '7kOAUycVULgdukvVp';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
